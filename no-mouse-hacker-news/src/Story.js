@@ -25,6 +25,7 @@ class Story extends Component {
                 <div>
                     <h5>{this.state.json['title']}</h5>
                     <p>{this.state.json['url']}</p>
+                    <hr></hr>
                 </div>
             )
         }
