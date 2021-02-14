@@ -1,0 +1,16 @@
+.StoryWindow {
+    text-align: left;
+    float:left;
+    width: 40%;
+    border-right: 1px solid orange;
+}
+
+.wrap{
+    display:flex;
+}
+
+.box{
+    height: 100vh;
+    width: 50vw;
+    overflow: scroll;
+}
