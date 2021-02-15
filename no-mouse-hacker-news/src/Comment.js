@@ -43,7 +43,8 @@ class Comment extends Component {
         if (this.state.comment) {
             return (
                 <div class="comment">
-                    <div>{this.decodeEntities(this.state.comment['text'])}</div>
+                    <p style={{color: 'orange'}}>{this.state.comment['by']}</p>
+                    <p>{this.decodeEntities(this.state.comment['text'])}</p>
                 </div>
             )
         }

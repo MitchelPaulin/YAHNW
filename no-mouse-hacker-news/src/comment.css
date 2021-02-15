@@ -1,6 +1,11 @@
 .comment{
     font-size: 0.5em;
     text-align: left;
-    padding-bottom: 1%;
+    padding-bottom: 1px;
     padding-left: 1%;
+    border-bottom: 1px solid grey;
+}
+
+.author{
+    color: orange;
 }
