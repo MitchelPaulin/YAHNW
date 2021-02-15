@@ -27,8 +27,8 @@ class StoryWindow extends Component {
             }
             return(
             <div class="wrap">
-                <div class="StoryWindow box">{stories}</div>
-                <div class="box"><p>Comments</p></div>
+                <div class="StoryWindow box-right">{stories}</div>
+                <div class="box-left"><p>Comments</p></div>
             </div>
             );
         }

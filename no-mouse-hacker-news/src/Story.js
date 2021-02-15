@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './story.css'
 
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function getDataFromUnixTimestamp(unixTimestamp){
+    let time = new Date(unixTimestamp * 1000);
+    return [months[time.getMonth()], time.getDate()].join('-');
+}
+
 class Story extends Component {
     constructor(props){
         super(props);
@@ -21,11 +28,26 @@ class Story extends Component {
 
     render() {
         if(this.state.json){
+            console.log(this.state.json)
             return (
-                <div>
-                    <h5>{this.state.json['title']}</h5>
-                    <p>{this.state.json['url']}</p>
-                    <hr></hr>
+                <div class="bottom">
+                    <div style={{float: 'left', width: '80%'}}>
+                        <h5>{this.state.json['title']}</h5>
+                        <p class="author">{this.state.json['by']}</p>
+                        <p class="link">{this.state.json['url']}</p>
+                    </div>
+                    <div style={{float: 'right', width: '8%'}}>
+                        <div class="block">
+                            <p class="right-item inline">{this.state.json['score']}</p>
+                            <div class="right-item triangle-up inline"></div>
+                        </div>
+                        <div class="block">
+                            <p class="right-item inline">{this.state.json['kids'] ? this.state.json['kids'].length : 0}</p>
+                            <div class="bubble bubble-bottom-left inline"></div>
+                        </div>
+                        <p class="right-item inline">{getDataFromUnixTimestamp(this.state.json['time'])}</p>
+                    </div>
+                    <div style={{clear:'both'}}></div>
                 </div>
             )
         }

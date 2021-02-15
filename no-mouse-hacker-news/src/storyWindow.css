@@ -2,15 +2,20 @@
     text-align: left;
     float:left;
     width: 40%;
-    border-right: 1px solid orange;
 }
 
 .wrap{
     display:flex;
 }
 
-.box{
+.box-right{
     height: 100vh;
-    width: 50vw;
+    width: 40vw;
+    overflow: scroll;
+}
+
+.box-left{
+    height: 100vh;
+    width: 60vw;
     overflow: scroll;
 }

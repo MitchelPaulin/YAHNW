@@ -3,11 +3,63 @@ h5{
     padding-left: 1%;
 }
 
-p{
-    font-size: 0.3em;
-    padding-left: 1.5%;
-}
-
-hr{
+.bottom{
+    padding-bottom: 1%;
     border-bottom: 1px solid orange;
 }
+
+.link{
+    font-size: 0.35em;
+    padding-left: 1.5%;
+    color: gray;
+}
+
+.author{
+    font-size: 0.45em;
+    padding-left: 2%;
+    color: orange;
+}
+
+.right-item{
+    font-size: 0.42em;
+}
+
+.inline{
+    display:inline-block;
+    margin-right:10px;
+}
+
+.block{
+    display: block;
+}
+
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid orange;
+}
+
+.bubble {
+    position: relative;
+    line-height: 10%;
+    width: 10%;
+    background: orange;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .bubble-bottom-left::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 12px solid orange;
+    border-right: 6px solid transparent;
+    border-top: 6x solid orange;
+    border-bottom: 10px solid transparent;
+    right: 2px;
+    bottom: -6px;
+  }

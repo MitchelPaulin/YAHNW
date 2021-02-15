@@ -11,6 +11,7 @@
 .Ribbon{
   background-color: orange;
   text-align: left;
-  font-size: 2em;
+  font-size: 0.7em;
   font-weight: bold;
+  padding-left: 1%;
 }
