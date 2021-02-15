@@ -26,6 +26,12 @@ class Comment extends Component {
         this.fetchComments(this.props.rootKid);
     }
 
+    decodeEntities(input) {
+        var y = document.createElement('textarea');
+        y.innerHTML = input;
+        return y.value;
+      }
+
     componentDidUpdate(prevProps) {
         if (this.props.rootKid !== prevProps.rootKid) {
           this.fetchComments(this.props.rootKid);
@@ -37,7 +43,7 @@ class Comment extends Component {
         if(this.state.comment){
             return(
                 <div class="comment">
-                    <p>{this.state.comment['text']}</p>
+                    <div>{this.decodeEntities(this.state.comment['text'])}</div>
                 </div>
             )
         }
