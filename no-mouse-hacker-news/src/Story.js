@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import './story.css';
 
-const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-function getDataFromUnixTimestamp(unixTimestamp){
+function getDataFromUnixTimestamp(unixTimestamp) {
     let time = new Date(unixTimestamp * 1000);
     return [months[time.getMonth()], time.getDate()].join('-');
 }
 
 class Story extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {json: null};
+        this.state = { json: null };
     }
 
     componentDidMount() {
@@ -21,22 +21,22 @@ class Story extends Component {
         let tail = '.json';
 
         fetch(link + this.props.id + tail)
-        .then((resp) => resp.json())
-        .then(function(response) {
-            this.setState({json: response});
-        }.bind(this));
+            .then((resp) => resp.json())
+            .then(function (response) {
+                this.setState({ json: response });
+            }.bind(this));
     }
 
     render() {
-        if(this.state.json){
+        if (this.state.json) {
             return (
                 <div class="bottom">
-                    <div style={{float: 'left', width: '80%'}}>
+                    <div style={{ float: 'left', width: '80%' }}>
                         <a class="title" href={this.state.json['url']}>{this.state.json['title']}</a>
                         <p class="author">{this.state.json['by']}</p>
                         <p class="link">{this.state.json['url']}</p>
                     </div>
-                    <div style={{float: 'right', width: '8%'}}>
+                    <div style={{ float: 'right', width: '8%' }}>
                         <div class="block">
                             <p class="right-item inline">{this.state.json['score']}</p>
                             <div class="right-item triangle-up inline"></div>
@@ -47,7 +47,7 @@ class Story extends Component {
                         </div>
                         <p class="right-item inline">{getDataFromUnixTimestamp(this.state.json['time'])}</p>
                     </div>
-                    <div style={{clear:'both'}}></div>
+                    <div style={{ clear: 'both' }}></div>
                 </div>
             )
         }

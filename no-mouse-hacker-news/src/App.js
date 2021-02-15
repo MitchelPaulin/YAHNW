@@ -7,7 +7,7 @@ function App() {
       <div class="Ribbon">
         <p>Welcome to ./HackerNews.sh</p>
       </div>
-      <StoryWindow/>
+      <StoryWindow />
     </div>
   );
 }

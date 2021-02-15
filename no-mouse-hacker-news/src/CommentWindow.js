@@ -3,21 +3,21 @@ import Comment from './Comment';
 
 class CommentWindow extends Component {
 
-    render(){
+    render() {
 
-        if(this.props.kids){
+        if (this.props.kids) {
             let comments = [];
-            for(let kid of this.props.kids){
+            for (let kid of this.props.kids) {
                 comments.push(<Comment rootKid={kid}></Comment>)
             }
-            return(
+            return (
                 <div>
                     {comments}
                 </div>
             );
         }
 
-        return(
+        return (
             <div>Comments</div>
         )
     }
