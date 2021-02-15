@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './story.css'
+import './story.css';
 
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -9,7 +9,7 @@ function getDataFromUnixTimestamp(unixTimestamp){
 }
 
 class Story extends Component {
-    
+
     constructor(props){
         super(props);
         this.state = {json: null};
@@ -29,8 +29,6 @@ class Story extends Component {
 
     render() {
         if(this.state.json){
-            console.log(this.state.json);
-            console.log(this.props.commentCallback);
             return (
                 <div class="bottom">
                     <div style={{float: 'left', width: '80%'}}>

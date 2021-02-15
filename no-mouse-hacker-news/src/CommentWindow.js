@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
+import Comment from './Comment';
 
 class CommentWindow extends Component {
 
     render(){
 
-        console.log(this.props.kids);
-
         if(this.props.kids){
             let comments = [];
             for(let kid of this.props.kids){
-                comments.push(<p>{kid}</p>)
+                comments.push(<Comment rootKid={kid}></Comment>)
             }
             return(
                 <div>
