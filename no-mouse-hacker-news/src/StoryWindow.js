@@ -32,10 +32,10 @@ class StoryWindow extends Component {
             }
             return(
             <div class="wrap">
-                <div class="StoryWindow box-right">
+                <div class="StoryWindow box-left">
                     {stories}
                 </div>
-                <div class="box-left">
+                <div class="box-right">
                     <CommentWindow kids={this.state.kids}></CommentWindow>
                 </div>
             </div>

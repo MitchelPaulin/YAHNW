@@ -18,7 +18,7 @@ class CommentWindow extends Component {
         }
 
         return(
-            <p>suh</p>
+            <div>Comments</div>
         )
     }
 

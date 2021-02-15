@@ -8,14 +8,14 @@
     display:flex;
 }
 
-.box-right{
-    height: 100vh;
+.box-left{
+    height: 94vh;
     width: 40vw;
     overflow: scroll;
 }
 
-.box-left{
-    height: 100vh;
+.box-right{
+    height: 94vh;
     width: 60vw;
     overflow: scroll;
 }
