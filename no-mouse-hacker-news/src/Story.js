@@ -32,7 +32,7 @@ class Story extends Component {
             return (
                 <div class="bottom">
                     <div style={{float: 'left', width: '80%'}}>
-                        <h5>{this.state.json['title']}</h5>
+                        <a class="title" href={this.state.json['url']}>{this.state.json['title']}</a>
                         <p class="author">{this.state.json['by']}</p>
                         <p class="link">{this.state.json['url']}</p>
                     </div>
