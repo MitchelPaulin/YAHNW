@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CommentWindow from './CommentWindow';
 import Story from './Story';
 import './storyWindow.css'
 
@@ -7,9 +8,12 @@ class StoryWindow extends Component {
     constructor(props){
         super(props);
         this.state = {
-            data: null
+            data: null,
+            kids: null
         }
     }
+
+    commentClickCallback= (kidsArray) => { this.setState({kids: kidsArray}) };
 
     componentDidMount() {
         fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
@@ -20,15 +24,20 @@ class StoryWindow extends Component {
     }
 
     render() {
+
         if (this.state.data) {
             let stories = [];
             for (let s of this.state.data){
-                stories.push(<Story id={s}></Story>)
+                stories.push(<Story id={s} commentCallback={this.commentClickCallback}></Story>)
             }
             return(
             <div class="wrap">
-                <div class="StoryWindow box-right">{stories}</div>
-                <div class="box-left"><p>Comments</p></div>
+                <div class="StoryWindow box-right">
+                    {stories}
+                </div>
+                <div class="box-left">
+                    <CommentWindow kids={this.state.kids}></CommentWindow>
+                </div>
             </div>
             );
         }

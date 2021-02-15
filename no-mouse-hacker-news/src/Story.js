@@ -9,9 +9,10 @@ function getDataFromUnixTimestamp(unixTimestamp){
 }
 
 class Story extends Component {
+    
     constructor(props){
         super(props);
-        this.state = {id: null, json: null};
+        this.state = {json: null};
     }
 
     componentDidMount() {
@@ -28,7 +29,8 @@ class Story extends Component {
 
     render() {
         if(this.state.json){
-            console.log(this.state.json)
+            console.log(this.state.json);
+            console.log(this.props.commentCallback);
             return (
                 <div class="bottom">
                     <div style={{float: 'left', width: '80%'}}>
@@ -43,7 +45,7 @@ class Story extends Component {
                         </div>
                         <div class="block">
                             <p class="right-item inline">{this.state.json['kids'] ? this.state.json['kids'].length : 0}</p>
-                            <div class="bubble bubble-bottom-left inline"></div>
+                            <div class="bubble bubble-bottom-left inline" onClick={() => this.props.commentCallback(this.state.json['kids'])}></div>
                         </div>
                         <p class="right-item inline">{getDataFromUnixTimestamp(this.state.json['time'])}</p>
                     </div>
