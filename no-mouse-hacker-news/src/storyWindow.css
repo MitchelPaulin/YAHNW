@@ -1,20 +1,20 @@
 .StoryWindow {
     text-align: left;
-    float:left;
+    float: left;
     width: 40%;
 }
 
-.wrap{
-    display:flex;
+.wrap {
+    display: flex;
 }
 
-.box-left{
+.box-left {
     height: 94vh;
     width: 40vw;
     overflow: scroll;
 }
 
-.box-right{
+.box-right {
     height: 94vh;
     width: 60vw;
     overflow: scroll;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './comment.css';
+import DOMPurify from 'dompurify';
 
 class Comment extends Component {
 
@@ -26,12 +27,6 @@ class Comment extends Component {
         this.fetchComments(this.props.rootKid);
     }
 
-    decodeEntities(input) {
-        var y = document.createElement('textarea');
-        y.innerHTML = input;
-        return y.value;
-    }
-
     componentDidUpdate(prevProps) {
         if (this.props.rootKid !== prevProps.rootKid) {
             this.fetchComments(this.props.rootKid);
@@ -40,11 +35,18 @@ class Comment extends Component {
 
     render() {
 
-        if (this.state.comment) {
+        if (this.state.comment && !this.state.comment['deleted']) {
+
+            //Comments are given in HTML, important that we sanitize the content before displaying it 
+            let purified = DOMPurify.sanitize(this.state.comment['text']);
+
             return (
                 <div class="comment">
-                    <p style={{color: 'orange'}}>{this.state.comment['by']}</p>
-                    <p>{this.decodeEntities(this.state.comment['text'])}</p>
+                    <p style={{ color: 'orange' }}>{this.state.comment['by']}</p>
+                    <div style={{ paddingBottom: '1%' }}
+                        dangerouslySetInnerHTML={{
+                            __html: purified
+                        }}></div>
                 </div>
             )
         }
