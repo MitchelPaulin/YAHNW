@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
+import './comment.css';
 
 class CommentWindow extends Component {
 
@@ -8,10 +9,10 @@ class CommentWindow extends Component {
         if (this.props.kids) {
             let comments = [];
             for (let kid of this.props.kids) {
-                comments.push(<Comment rootKid={kid}></Comment>)
+                comments.push(<Comment rootKid={kid} nesting={0}></Comment>)
             }
             return (
-                <div>
+                <div class="comment">
                     {comments}
                 </div>
             );

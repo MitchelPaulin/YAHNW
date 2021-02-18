@@ -40,13 +40,22 @@ class Comment extends Component {
             //Comments are given in HTML, important that we sanitize the content before displaying it 
             let purified = DOMPurify.sanitize(this.state.comment['text']);
 
+            //Create the child comments of this comment
+            let childrenComments = []
+            if(this.state.comment['kids']){
+                for(let kid of this.state.comment['kids']){
+                    childrenComments.push(<Comment rootKid={kid} nesting={this.props.nesting + 1}></Comment>);
+                }
+            }
+
             return (
-                <div class="comment">
+                <div style={{ paddingLeft: this.props.nesting * 10 }}>
                     <p style={{ color: 'orange' }}>{this.state.comment['by']}</p>
                     <div style={{ paddingBottom: '1%' }}
                         dangerouslySetInnerHTML={{
                             __html: purified
                         }}></div>
+                    {childrenComments}
                 </div>
             )
         }
