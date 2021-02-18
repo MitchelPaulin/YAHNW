@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CommentWindow from './CommentWindow';
 import Story from './Story';
-import './storyWindow.css'
+import './styles/storyWindow.css'
 
 class StoryWindow extends Component {
 

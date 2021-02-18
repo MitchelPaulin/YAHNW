@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './story.css';
+import './styles/story.css';
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 

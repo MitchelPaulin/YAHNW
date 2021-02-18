@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './Comment';
-import './comment.css';
+import './styles/comment.css';
 
 class CommentWindow extends Component {
 
