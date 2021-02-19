@@ -9,7 +9,7 @@ class CommentWindow extends Component {
         if (this.props.kids) {
             let comments = [];
             for (let kid of this.props.kids) {
-                comments.push(<Comment rootKid={kid} nesting={0}></Comment>)
+                comments.push(<Comment rootKid={kid} nesting={0} shouldHide={false}></Comment>)
             }
             return (
                 <div class="comment">
