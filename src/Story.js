@@ -40,7 +40,7 @@ class Story extends Component {
                     <div style={{ float: 'left', width: '80%' }}>
                         <a class="title" href={this.state.json['url']}>{this.state.json['title']}</a>
                         <p class="author">{this.state.json['by']}</p>
-                        <p class="link">{this.state.json['url']}</p>
+                        <a class="link" href={this.state.json['url']}>{this.state.json['url']}</a>
                     </div>
                     <div style={{ float: 'right', width: '8%' }}>
                         <div class="block">
