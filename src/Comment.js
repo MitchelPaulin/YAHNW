@@ -57,26 +57,28 @@ class Comment extends Component {
 
             if (!this.state.isHidden) {
                 return (
-                    <div style={{ paddingLeft: this.props.nesting * 15 }}>
-                        <button class="comment-author" onClick={() => this.authorClicked()}>
-                            <div class="inline" style={{ paddingLeft: '1%' }}>
-                                <div class="triangle-up-comment"></div>
+                    <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
+                        <div style={{ borderLeft: (this.props.nesting === 0 ? 'none' : '1px solid grey') }}>
+                            <button class="comment-author" onClick={() => this.authorClicked()}>
+                                <div class="inline" style={{ paddingLeft: '1%' }}>
+                                    <div class="triangle-up-comment"></div>
+                                </div>
+                                {this.state.comment['by']}
+                                <p class="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
+                            </button>
+                            <div>
+                                <div style={{ paddingBottom: '1%', paddingLeft: '3%' }}
+                                    dangerouslySetInnerHTML={{
+                                        __html: purified
+                                    }}></div>
                             </div>
-                            {this.state.comment['by']}
-                            <p class="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
-                        </button>
-                        <div>
-                            <div style={{ paddingBottom: '1%', paddingLeft: '3%' }}
-                                dangerouslySetInnerHTML={{
-                                    __html: purified
-                                }}></div>
+                            {childComments}
                         </div>
-                        {childComments}
                     </div>
                 )
             } else {
                 return (
-                    <div style={{ paddingLeft: this.props.nesting * 15 }}>
+                    <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
                         <button class="comment-author" onClick={() => this.authorClicked()}>
                             <div class="inline" style={{ paddingLeft: '1%' }}>
                                 <div class="triangle-down-comment"></div>

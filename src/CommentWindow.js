@@ -19,7 +19,7 @@ class CommentWindow extends Component {
         }
 
         return (
-            <div>Comments</div>
+            <div>Click on a speech bubble to load some comments</div>
         )
     }
 
