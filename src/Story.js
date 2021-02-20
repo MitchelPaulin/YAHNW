@@ -41,9 +41,9 @@ class Story extends Component {
                     <div style={{ float: 'right', width: '8%' }}>
                         <p class="inline">{this.state.json['score']}</p>
                         <div class="triangle-up inline"></div>
-                        <div class="block">
+                        <div class="block" onClick={() => this.commentIconClicked()}>
                             <p class="inline">{this.state.json['kids'] ? this.state.json['kids'].length : 0}</p>
-                            <div class="bubble bubble-bottom-left inline" onClick={() => this.commentIconClicked()}></div>
+                            <div class="bubble bubble-bottom-left inline"></div>
                         </div>
                     </div>
                     <div style={{ clear: 'both' }}></div>
