@@ -12,7 +12,9 @@ class Story extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { json: null };
+        this.state = {
+            json: null
+         };
     }
 
     componentDidMount() {
@@ -27,10 +29,14 @@ class Story extends Component {
             }.bind(this));
     }
 
+    commentIconClicked() {
+        this.props.commentCallback(this.state.json['kids'], this.state.json['id']);
+    }
+
     render() {
         if (this.state.json) {
             return (
-                <div class="bottom">
+                <div class="bottom" style={ this.props.selected ? {borderLeft: '10px solid orange'} : {} }>
                     <div style={{ float: 'left', width: '80%' }}>
                         <a class="title" href={this.state.json['url']}>{this.state.json['title']}</a>
                         <p class="author">{this.state.json['by']}</p>
@@ -43,7 +49,7 @@ class Story extends Component {
                         </div>
                         <div class="block">
                             <p class="right-item inline">{this.state.json['kids'] ? this.state.json['kids'].length : 0}</p>
-                            <div class="bubble bubble-bottom-left inline" onClick={() => this.props.commentCallback(this.state.json['kids'])}></div>
+                            <div class="bubble bubble-bottom-left inline" onClick={() => this.commentIconClicked()}></div>
                         </div>
                         <p class="right-item inline">{getDataFromUnixTimestamp(this.state.json['time'])}</p>
                     </div>

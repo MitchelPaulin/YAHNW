@@ -9,11 +9,14 @@ class StoryWindow extends Component {
         super(props);
         this.state = {
             data: null,
-            kids: null
+            kids: null,
+            selectedStory: null
         }
     }
 
-    commentClickCallback = (kidsArray) => { this.setState({ kids: kidsArray }) };
+    commentClickCallback = (kidsArray, id) => { 
+        this.setState({ kids: kidsArray, selectedStory: id });
+     }
 
     componentDidMount() {
         fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
@@ -28,7 +31,7 @@ class StoryWindow extends Component {
         if (this.state.data) {
             let stories = [];
             for (let s of this.state.data) {
-                stories.push(<Story id={s} commentCallback={this.commentClickCallback}></Story>)
+                stories.push(<Story id={s} commentCallback={this.commentClickCallback} selected={this.state.selectedStory === s}></Story>)
             }
             return (
                 <div class="wrap">
