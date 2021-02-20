@@ -1,12 +1,14 @@
 {
-  "name": "no-mouse-hacker-news",
-  "version": "0.1.0",
-  "private": true,
+  "name": "YAHNW",
+  "version": "1.0.0",
+  "private": false,
+  "homepage": "https://MitchelPaulin.github.io/YAHNW",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
     "dompurify": "^2.2.6",
+    "gh-pages": "^3.1.0",
     "he": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -14,6 +16,8 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

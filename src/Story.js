@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/story.css';
 import { getHumanReadableTimeElapsed } from './common.js';
+import bubble from './imgs/bubble.png';
 class Story extends Component {
 
     constructor(props) {
@@ -43,7 +44,7 @@ class Story extends Component {
                         <div class="triangle-up inline"></div>
                         <div class="block" onClick={() => this.commentIconClicked()}>
                             <p class="inline">{this.state.json['kids'] ? this.state.json['kids'].length : 0}</p>
-                            <div class="bubble bubble-bottom-left inline"></div>
+                            <img src={bubble} alt="speech bubble" style={{ width: "25%"}}></img>
                         </div>
                     </div>
                     <div style={{ clear: 'both' }}></div>
