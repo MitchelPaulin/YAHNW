@@ -14,9 +14,9 @@ class StoryWindow extends Component {
         }
     }
 
-    commentClickCallback = (kidsArray, id) => { 
+    commentClickCallback = (kidsArray, id) => {
         this.setState({ kids: kidsArray, selectedStory: id });
-     }
+    }
 
     componentDidMount() {
         fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
@@ -45,7 +45,7 @@ class StoryWindow extends Component {
             );
         }
 
-        return <div>Loading...</div>;;
+        return <div><p>Loading...</p></div>;;
     }
 }
 

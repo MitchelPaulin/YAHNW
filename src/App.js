@@ -5,7 +5,9 @@ function App() {
   return (
     <div className="App">
       <div class="Ribbon">
-        <p>Welcome to ./HackerNews.sh</p>
+        <a href="www.youtube.com" style={{ color: 'white', textDecoration: 'none' }}>
+          <p>YAHNW</p>
+        </a>
       </div>
       <StoryWindow selectedStory={null} />
     </div>

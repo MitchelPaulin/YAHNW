@@ -19,7 +19,9 @@ class CommentWindow extends Component {
         }
 
         return (
-            <div>Click on a speech bubble to load some comments</div>
+            <div>
+                <p>Click on a speech bubble to load some comments</p>
+            </div>
         )
     }
 
