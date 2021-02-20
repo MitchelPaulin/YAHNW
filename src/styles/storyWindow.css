@@ -11,11 +11,11 @@
 .box-left {
     height: 94vh;
     width: 40vw;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .box-right {
     height: 94vh;
     width: 60vw;
-    overflow: scroll;
+    overflow-y: scroll;
 }
