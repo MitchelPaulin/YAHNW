@@ -12,7 +12,7 @@ class CommentWindow extends Component {
                 comments.push(<Comment rootKid={kid} nesting={0} shouldHide={false}></Comment>)
             }
             return (
-                <div class="comment">
+                <div style={{paddingTop: '1%'}} class="comment">
                     {comments}
                 </div>
             );

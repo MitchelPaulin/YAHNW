@@ -30,6 +30,7 @@ class Comment extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.rootKid !== prevProps.rootKid) {
+            this.setState({isHidden: false});
             this.fetchComments(this.props.rootKid);
         }
     }
@@ -63,7 +64,7 @@ class Comment extends Component {
                             {this.state.comment['by']}
                         </button>
                         <div>
-                            <div style={{ paddingBottom: '1%', paddingLeft: '1%' }}
+                            <div style={{ paddingBottom: '1%', paddingLeft: '3%' }}
                                 dangerouslySetInnerHTML={{
                                     __html: purified
                             }}></div>
