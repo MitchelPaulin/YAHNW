@@ -7,11 +7,12 @@
 }
 
 .bottom {
+    padding-bottom: 2%;
     border-bottom: 1px solid grey;
 }
 
 .link {
-    font-size: 0.35em;
+    font-size: 0.4em;
     padding-left: 1.5%;
     color: gray;
     text-decoration: none;
@@ -23,13 +24,15 @@
     color: orange;
 }
 
-.right-item {
-    font-size: 0.42em;
+.time-story {
+    font-size: 0.45em;
+    padding-left: 1%;
 }
 
 .inline {
     display: inline-block;
     margin-right: 10px;
+    font-size: 0.42em;
 }
 
 .block {
