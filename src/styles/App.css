@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #191919;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 }
 
 .Ribbon {
-  background-color: orange;
+  background-color: #fab162;
   text-align: left;
   font-size: 0.7em;
   font-weight: bold;

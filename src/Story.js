@@ -30,7 +30,7 @@ class Story extends Component {
     render() {
         if (this.state.json) {
             return (
-                <div class="bottom" style={this.props.selected ? { borderLeft: '10px solid orange' } : {}}>
+                <div class="bottom" style={this.props.selected ? { borderLeft: '7px solid #fab162' } : {}}>
                     <div style={{ float: 'left', width: '85%' }}>
                         <a class="title" href={this.state.json['url']}>{this.state.json['title']}</a>
                         <div style={{ display: 'flex' }}>
