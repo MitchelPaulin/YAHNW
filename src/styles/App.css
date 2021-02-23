@@ -7,12 +7,3 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.Ribbon {
-  background-color: #fab162;
-  text-align: left;
-  font-size: 0.7em;
-  font-weight: bold;
-  padding-left: 1%;
-  height: 6vh;
-}

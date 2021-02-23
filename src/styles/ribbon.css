@@ -1,0 +1,13 @@
+.Ribbon {
+    background-color: #fab162;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 1%;
+    height: 6vh;
+  }
+
+.Title {
+  font-size: 70%;
+  color: white;
+  text-decoration: none;
+}
