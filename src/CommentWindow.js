@@ -20,7 +20,7 @@ class CommentWindow extends Component {
 
         return (
             <div>
-                <p>Click on a speech bubble to load some comments</p>
+                <p style={{fontSize: '75%', color: 'grey'}}>Click on a speech bubble</p>
             </div>
         )
     }
