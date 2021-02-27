@@ -1,8 +1,6 @@
 # YAHNW
 
-Yet another hacker news website. A website that ... lets you read hacker news. 
-
-Check it out [here](https://mitchelpaulin.github.io/YAHNW/)
+[Yet another hacker news website](https://mitchelpaulin.github.io/YAHNW/). A website that ... lets you read hacker news.
 ## Run the website locally 
 
 ```bash
