@@ -7,7 +7,7 @@ class Ribbon extends Component {
         return (
             <div class="Ribbon">
                 <a href="https://github.com/MitchelPaulin/YAHNW" class="Title">
-                    <p>YAHNW</p>
+                    YAHNW
                 </a>
             </div>
         )
