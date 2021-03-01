@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/story.css';
 import { getHumanReadableTimeElapsed } from './common.js';
-import bubble from './imgs/bubble.png';
+import bubble from './imgs/bubble.svg';
 class Story extends Component {
 
     constructor(props) {
