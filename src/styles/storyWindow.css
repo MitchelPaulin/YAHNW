@@ -1,7 +1,12 @@
-.StoryWindow {
+.story-window {
     text-align: left;
     float: left;
     width: 40%;
+}
+
+.loading {
+    font-size: 90%;
+    color: grey;
 }
 
 .wrap {

@@ -70,7 +70,7 @@ class Comment extends Component {
                                 <div style={{ paddingBottom: '1%', paddingLeft: '3%' }}
                                     dangerouslySetInnerHTML={{
                                         __html: purified
-                                    }}></div>
+                                    }} />
                             </div>
                             {childComments}
                         </div>
@@ -84,7 +84,9 @@ class Comment extends Component {
                                 <div class="triangle-down-comment"></div>
                             </div>
                             {this.state.comment['by']}
-                            <p class="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
+                            <p class="time">
+                                {getHumanReadableTimeElapsed(this.state.comment['time'])}
+                            </p>
                         </button>
                     </div>
                 )

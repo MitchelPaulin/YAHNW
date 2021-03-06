@@ -32,22 +32,34 @@ class Story extends Component {
             return (
                 <div class="bottom" style={this.props.selected ? { borderLeft: '7px solid #fab162' } : {}}>
                     <div style={{ float: 'left', width: '85%' }}>
-                        <a class="title" href={this.state.json['url']}>{this.state.json['title']}</a>
+                        <a class="title" href={this.state.json['url']}>
+                            {this.state.json['title']}
+                        </a>
                         <div style={{ display: 'flex' }}>
-                            <p class="author">{this.state.json['by']}</p>
-                            <p class="time-story">{getHumanReadableTimeElapsed(this.state.json['time'])}</p>
+                            <p class="author">
+                                {this.state.json['by']}
+                            </p>
+                            <p class="time-story">
+                                {getHumanReadableTimeElapsed(this.state.json['time'])}
+                            </p>
                         </div>
-                        <a class="link" href={this.state.json['url']}>{this.state.json['url']}</a>
+                        <a class="link" href={this.state.json['url']}>
+                            {this.state.json['url']}
+                        </a>
                     </div>
                     <div style={{ float: 'right', width: '8%' }}>
-                        <p class="inline">{this.state.json['score']}</p>
-                        <div class="triangle-up inline"></div>
+                        <p class="inline">
+                            {this.state.json['score']}
+                        </p>
+                        <div class="triangle-up inline" />
                         <div class="block" onClick={() => this.commentIconClicked()}>
-                            <p class="inline">{this.state.json['kids'] ? this.state.json['kids'].length : 0}</p>
-                            <img src={bubble} alt="speech bubble" style={{ width: "25%"}}></img>
+                            <p class="inline">
+                                {this.state.json['kids'] ? this.state.json['kids'].length : 0}
+                            </p>
+                            <img src={bubble} alt="speech bubble" style={{ width: "25%" }} />
                         </div>
                     </div>
-                    <div style={{ clear: 'both' }}></div>
+                    <div style={{ clear: 'both' }} />
                 </div>
             )
         }

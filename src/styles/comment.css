@@ -7,6 +7,17 @@ a {
     text-align: left;
     padding-bottom: 1%;
     border-bottom: 1px solid #fab162;
+    padding-top: '1%';
+}
+
+.comment-body {
+    padding-bottom: 1%; 
+    padding-left: 3%;
+}
+
+.click-comment {
+    font-size: 75%;
+    color: grey;
 }
 
 .comment-author {

@@ -1,4 +1,4 @@
-.Ribbon {
+.ribbon {
     background-color: #fab162;
     text-align: left;
     font-weight: bold;
@@ -6,7 +6,7 @@
     height: 5vh;
   }
 
-.Title {
+.site-title {
   font-size: 60%;
   color: white;
   text-decoration: none;
