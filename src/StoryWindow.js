@@ -31,7 +31,7 @@ class StoryWindow extends Component {
         if (this.state.data) {
             let stories = [];
             for (let s of this.state.data) {
-                stories.push(<Story id={s} commentCallback={this.commentClickCallback} selected={this.state.selectedStory === s}></Story>)
+                stories.push(<Story key={s} id={s} commentCallback={this.commentClickCallback} selected={this.state.selectedStory === s}></Story>)
             }
             return (
                 <div className="wrap">

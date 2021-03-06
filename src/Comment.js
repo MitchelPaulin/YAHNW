@@ -51,7 +51,7 @@ class Comment extends Component {
             let childComments = [];
             if (this.state.comment['kids']) {
                 for (let kid of this.state.comment['kids']) {
-                    childComments.push(<Comment rootKid={kid} nesting={this.props.nesting + 1}></Comment>);
+                    childComments.push(<Comment key={kid} rootKid={kid} nesting={this.props.nesting + 1}></Comment>);
                 }
             }
 
