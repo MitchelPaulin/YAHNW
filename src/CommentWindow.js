@@ -12,7 +12,7 @@ class CommentWindow extends Component {
                 comments.push(<Comment rootKid={kid} nesting={0} shouldHide={false}></Comment>)
             }
             return (
-                <div class="comment">
+                <div className="comment">
                     {comments}
                 </div>
             );
@@ -20,7 +20,7 @@ class CommentWindow extends Component {
 
         return (
             <div>
-                <p class="click-comment">Click on a speech bubble</p>
+                <p className="click-comment">Click on a speech bubble</p>
             </div>
         )
     }

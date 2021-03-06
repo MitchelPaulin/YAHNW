@@ -34,11 +34,11 @@ class StoryWindow extends Component {
                 stories.push(<Story id={s} commentCallback={this.commentClickCallback} selected={this.state.selectedStory === s}></Story>)
             }
             return (
-                <div class="wrap">
-                    <div class="story-window box-left">
+                <div className="wrap">
+                    <div className="story-window box-left">
                         {stories}
                     </div>
-                    <div class="box-right">
+                    <div className="box-right">
                         <CommentWindow kids={this.state.kids}></CommentWindow>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ class StoryWindow extends Component {
 
         return (
             <div>
-                <p class="loading">
+                <p className="loading">
                     Loading...
                 </p>
             </div>

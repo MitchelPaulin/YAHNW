@@ -30,30 +30,30 @@ class Story extends Component {
     render() {
         if (this.state.json) {
             return (
-                <div class="bottom" style={this.props.selected ? { borderLeft: '7px solid #fab162' } : {}}>
+                <div className="bottom" style={this.props.selected ? { borderLeft: '7px solid #fab162' } : {}}>
                     <div style={{ float: 'left', width: '85%' }}>
-                        <a class="title" href={this.state.json['url']}>
+                        <a className="title" href={this.state.json['url']}>
                             {this.state.json['title']}
                         </a>
                         <div style={{ display: 'flex' }}>
-                            <p class="author">
+                            <p className="author">
                                 {this.state.json['by']}
                             </p>
-                            <p class="time-story">
+                            <p className="time-story">
                                 {getHumanReadableTimeElapsed(this.state.json['time'])}
                             </p>
                         </div>
-                        <a class="link" href={this.state.json['url']}>
+                        <a className="link" href={this.state.json['url']}>
                             {this.state.json['url']}
                         </a>
                     </div>
                     <div style={{ float: 'right', width: '8%' }}>
-                        <p class="inline">
+                        <p className="inline">
                             {this.state.json['score']}
                         </p>
-                        <div class="triangle-up inline" />
-                        <div class="block" onClick={() => this.commentIconClicked()}>
-                            <p class="inline">
+                        <div className="triangle-up inline" />
+                        <div className="block" onClick={() => this.commentIconClicked()}>
+                            <p className="inline">
                                 {this.state.json['kids'] ? this.state.json['kids'].length : 0}
                             </p>
                             <img src={bubble} alt="speech bubble" style={{ width: "25%" }} />

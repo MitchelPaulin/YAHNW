@@ -59,12 +59,12 @@ class Comment extends Component {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
                         <div style={{ borderLeft: (this.props.nesting === 0 ? 'none' : '1px solid grey') }}>
-                            <button class="comment-author" onClick={() => this.authorClicked()}>
-                                <div class="inline" style={{ paddingLeft: '1%' }}>
-                                    <div class="triangle-up-comment"></div>
+                            <button className="comment-author" onClick={() => this.authorClicked()}>
+                                <div className="inline" style={{ paddingLeft: '1%' }}>
+                                    <div className="triangle-up-comment"></div>
                                 </div>
                                 {this.state.comment['by']}
-                                <p class="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
+                                <p className="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
                             </button>
                             <div>
                                 <div style={{ paddingBottom: '1%', paddingLeft: '3%' }}
@@ -79,12 +79,12 @@ class Comment extends Component {
             } else {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
-                        <button class="comment-author" onClick={() => this.authorClicked()}>
-                            <div class="inline" style={{ paddingLeft: '1%' }}>
-                                <div class="triangle-down-comment"></div>
+                        <button className="comment-author" onClick={() => this.authorClicked()}>
+                            <div className="inline" style={{ paddingLeft: '1%' }}>
+                                <div className="triangle-down-comment"></div>
                             </div>
                             {this.state.comment['by']}
-                            <p class="time">
+                            <p className="time">
                                 {getHumanReadableTimeElapsed(this.state.comment['time'])}
                             </p>
                         </button>

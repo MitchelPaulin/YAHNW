@@ -5,8 +5,8 @@ class Ribbon extends Component {
 
     render() {
         return (
-            <div class="ribbon">
-                <a href="https://github.com/MitchelPaulin/YAHNW" class="site-title">
+            <div className="ribbon">
+                <a href="https://github.com/MitchelPaulin/YAHNW" className="site-title">
                     YAHNW
                 </a>
             </div>
