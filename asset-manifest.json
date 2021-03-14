@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/YAHNW/static/css/main.e7e29a17.chunk.css",
-    "main.js": "/YAHNW/static/js/main.74525ffc.chunk.js",
-    "main.js.map": "/YAHNW/static/js/main.74525ffc.chunk.js.map",
+    "main.css": "/YAHNW/static/css/main.f2d0c0da.chunk.css",
+    "main.js": "/YAHNW/static/js/main.87ffb023.chunk.js",
+    "main.js.map": "/YAHNW/static/js/main.87ffb023.chunk.js.map",
     "runtime-main.js": "/YAHNW/static/js/runtime-main.668da74e.js",
     "runtime-main.js.map": "/YAHNW/static/js/runtime-main.668da74e.js.map",
-    "static/js/2.809b24ad.chunk.js": "/YAHNW/static/js/2.809b24ad.chunk.js",
-    "static/js/2.809b24ad.chunk.js.map": "/YAHNW/static/js/2.809b24ad.chunk.js.map",
+    "static/js/2.5753526e.chunk.js": "/YAHNW/static/js/2.5753526e.chunk.js",
+    "static/js/2.5753526e.chunk.js.map": "/YAHNW/static/js/2.5753526e.chunk.js.map",
     "index.html": "/YAHNW/index.html",
-    "static/css/main.e7e29a17.chunk.css.map": "/YAHNW/static/css/main.e7e29a17.chunk.css.map",
-    "static/js/2.809b24ad.chunk.js.LICENSE.txt": "/YAHNW/static/js/2.809b24ad.chunk.js.LICENSE.txt",
+    "static/css/main.f2d0c0da.chunk.css.map": "/YAHNW/static/css/main.f2d0c0da.chunk.css.map",
+    "static/js/2.5753526e.chunk.js.LICENSE.txt": "/YAHNW/static/js/2.5753526e.chunk.js.LICENSE.txt",
     "static/media/bubble.68798dc2.svg": "/YAHNW/static/media/bubble.68798dc2.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.668da74e.js",
-    "static/js/2.809b24ad.chunk.js",
-    "static/css/main.e7e29a17.chunk.css",
-    "static/js/main.74525ffc.chunk.js"
+    "static/js/2.5753526e.chunk.js",
+    "static/css/main.f2d0c0da.chunk.css",
+    "static/js/main.87ffb023.chunk.js"
   ]
 }
