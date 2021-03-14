@@ -9,6 +9,17 @@ class Ribbon extends Component {
                 <a href="https://github.com/MitchelPaulin/YAHNW" className="site-title">
                     YAHNW
                 </a>
+                <div className="button-box">
+                    <button class="story-button">
+                        Best
+                    </button>
+                    <button class="story-button">
+                        Top
+                    </button>
+                    <button class="story-button">
+                        New
+                    </button>
+                </div>
             </div>
         )
     }

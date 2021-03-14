@@ -1,14 +1,32 @@
 .ribbon {
-    background-color: #fab162;
-    text-align: left;
-    font-weight: bold;
-    padding-left: 1%;
-    height: 5vh;
-  }
+  background-color: #fab162;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 1%;
+  height: 5vh;
+}
 
 .site-title {
   font-size: 60%;
   color: white;
   text-decoration: none;
   vertical-align: center;
+}
+
+.button-box {
+  float: right;
+  width: 15%;
+}
+
+.story-button {
+  border: transparent;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: center;
+  background-color: transparent;
+  color: white;
+  font-size: 50%;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 33%;
 }
