@@ -10,8 +10,7 @@ class StoryWindow extends Component {
         this.state = {
             data: null,
             kids: null,
-            selectedStory: null,
-            storyMode: this.props.storyMode
+            selectedStory: null
         }
     }
 
@@ -21,7 +20,6 @@ class StoryWindow extends Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.storyMode !== prevProps.storyMode) {
-            this.setState({ storyMode: this.props.storyMode });
             this.fetchStories();
         }
     }
@@ -32,11 +30,11 @@ class StoryWindow extends Component {
 
     fetchStories() {
         let url;
-        if(this.state.storyMode === 'Top') {
+        if (this.props.storyMode === 'Top') {
             url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
-        } else if (this.state.storyMode === 'Best') {
+        } else if (this.props.storyMode === 'Best') {
             url = 'https://hacker-news.firebaseio.com/v0/beststories.json';
-        } else if (this.state.storyMode === 'New') {
+        } else if (this.props.storyMode === 'New') {
             url = 'https://hacker-news.firebaseio.com/v0/newstories.json';
         } else {
             url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
