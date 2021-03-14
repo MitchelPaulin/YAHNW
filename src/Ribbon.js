@@ -3,6 +3,18 @@ import './styles/ribbon.css'
 
 class Ribbon extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedButton: 'Top'
+        }
+    }
+
+    storyButtonClicked(buttonClicked) {
+        this.props.storyModeChangedCallback(buttonClicked);
+        this.setState({ selectedButton: buttonClicked });
+    }
+
     render() {
         return (
             <div className="ribbon">
@@ -10,14 +22,14 @@ class Ribbon extends Component {
                     YAHNW
                 </a>
                 <div className="button-box">
-                    <button class="story-button">
-                        Best
+                    <button className="story-button" onClick={() => this.storyButtonClicked('Best')}>
+                        {this.state.selectedButton === 'Best' ? <b>Best</b> : <p>Best</p>}
                     </button>
-                    <button class="story-button">
-                        Top
+                    <button className="story-button" onClick={() => this.storyButtonClicked('Top')}>
+                        {this.state.selectedButton === 'Top' ? <b>Top</b> : <p>Top</p>}
                     </button>
-                    <button class="story-button">
-                        New
+                    <button className="story-button" onClick={() => this.storyButtonClicked('New')}>
+                        {this.state.selectedButton === 'New' ? <b>New</b> : <p>New</p>}
                     </button>
                 </div>
             </div>

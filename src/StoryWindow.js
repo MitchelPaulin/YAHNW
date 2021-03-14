@@ -10,7 +10,8 @@ class StoryWindow extends Component {
         this.state = {
             data: null,
             kids: null,
-            selectedStory: null
+            selectedStory: null,
+            storyMode: this.props.storyMode
         }
     }
 
@@ -18,8 +19,30 @@ class StoryWindow extends Component {
         this.setState({ kids: kidsArray, selectedStory: id });
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.storyMode !== prevProps.storyMode) {
+            this.setState({ storyMode: this.props.storyMode });
+            this.fetchStories();
+        }
+    }
+
     componentDidMount() {
-        fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+        this.fetchStories();
+    }
+
+    fetchStories() {
+        let url;
+        if(this.state.storyMode === 'Top') {
+            url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
+        } else if (this.state.storyMode === 'Best') {
+            url = 'https://hacker-news.firebaseio.com/v0/beststories.json';
+        } else if (this.state.storyMode === 'New') {
+            url = 'https://hacker-news.firebaseio.com/v0/newstories.json';
+        } else {
+            url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
+        }
+
+        fetch(url)
             .then((resp) => resp.json())
             .then(function (response) {
                 this.setState({ data: response });
