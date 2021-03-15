@@ -1,12 +1,12 @@
 a {
-    color: #fab162;
+    color: #3b2e2a;
 }
 
 .comment {
     font-size: 0.5em;
     text-align: left;
     padding-bottom: 1%;
-    border-bottom: 1px solid #fab162;
+    border-bottom: 1px solid #3b2e2a;
     padding-top: '1%';
     overflow-x: hidden;
 }
@@ -23,7 +23,7 @@ a {
 
 .comment-author {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    color: #fab162;
+    color: #3b2e2a;
     width: 100%;
     text-align: left;
     font-size: 1em;
@@ -36,7 +36,7 @@ a {
     height: 0;
     border-left: 0.8em solid transparent;
     border-right: 0.8em solid transparent;
-    border-bottom: 1.6em solid #fab162;
+    border-bottom: 1.6em solid #3b2e2a;
 }
 
 .triangle-down-comment {
@@ -44,12 +44,12 @@ a {
     height: 0;
     border-left: 0.8em solid transparent;
     border-right: 0.8em solid transparent;
-    border-top: 1.6em solid #fab162;
+    border-top: 1.6em solid #3b2e2a;
 }
 
 .time {
     padding-left: 1%;
     font-size: 0.9em;
     display: inline-block;
-    color: white;
+    color: black;
 }
