@@ -67,7 +67,7 @@ class Comment extends Component {
                                 <p className="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
                             </button>
                             <div>
-                                <div style={{ paddingBottom: '1%', paddingLeft: '3%' }}
+                                <div style={{ paddingLeft: '3%' }}
                                     dangerouslySetInnerHTML={{
                                         __html: purified
                                     }} />
