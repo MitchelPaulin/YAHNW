@@ -7,6 +7,7 @@ class StoryWindow extends Component {
 
     constructor(props) {
         super(props);
+        this.ref = React.createRef();
         this.state = {
             data: null,
             kids: null,
@@ -21,6 +22,7 @@ class StoryWindow extends Component {
     componentDidUpdate(prevProps) {
         if (this.props.storyMode !== prevProps.storyMode) {
             this.fetchStories();
+            this.ref.current.scrollTo(0, 0); // scroll to top of page
         }
     }
 
@@ -56,7 +58,7 @@ class StoryWindow extends Component {
             }
             return (
                 <div className="wrap">
-                    <div className="story-window box-left">
+                    <div className="story-window box-left" ref={this.ref}>
                         {stories}
                     </div>
                     <div className="box-right">
