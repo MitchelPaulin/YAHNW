@@ -15,12 +15,12 @@
 
 .box-left {
     height: 94vh;
-    width: 40vw;
+    width: 35vw;
     overflow-y: scroll;
 }
 
 .box-right {
     height: 94vh;
-    width: 60vw;
+    width: 65vw;
     overflow-y: scroll;
 }
