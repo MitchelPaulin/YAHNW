@@ -44,7 +44,7 @@ class Story extends Component {
                             </p>
                         </div>
                         <a className="link" href={this.state.json['url']}>
-                            {this.state.json['url'] && this.state.json['url'].length > 115 ? this.state.json['url'].substring(0, 112) + '...' : this.state.json['url'] }
+                            {this.state.json['url']}
                         </a>
                     </div>
                     <div style={{ float: 'right', width: '8%' }}>

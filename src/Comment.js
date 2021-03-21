@@ -58,16 +58,16 @@ class Comment extends Component {
             if (!this.state.isHidden) {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
-                        <div style={{ borderLeft: (this.props.nesting === 0 ? 'none' : '1px solid grey') }}>
+                        <div style={{ marginLeft: '3px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid #a5a09f') }}>
                             <button className="comment-author" onClick={() => this.authorClicked()}>
-                                <div className="inline" style={{ paddingLeft: '1%' }}>
+                                <div className="inline" style={{ paddingLeft: '2%' }}>
                                     <div className="triangle-up-comment"></div>
                                 </div>
                                 {this.state.comment['by']}
                                 <p className="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
                             </button>
-                            <div>
-                                <div style={{ paddingLeft: '3%' }}
+                            <div style={{ paddingLeft: '2%' }}>
+                                <div className="comment-box"
                                     dangerouslySetInnerHTML={{
                                         __html: purified
                                     }} />
@@ -79,15 +79,17 @@ class Comment extends Component {
             } else {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
-                        <button className="comment-author" onClick={() => this.authorClicked()}>
-                            <div className="inline" style={{ paddingLeft: '1%' }}>
-                                <div className="triangle-down-comment"></div>
-                            </div>
-                            {this.state.comment['by']}
-                            <p className="time">
-                                {getHumanReadableTimeElapsed(this.state.comment['time'])}
-                            </p>
-                        </button>
+                        <div style={{ marginLeft: '3px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid #a5a09f') }}>
+                            <button className="comment-author" onClick={() => this.authorClicked()}>
+                                <div className="inline" style={{ paddingLeft: '2%' }}>
+                                    <div className="triangle-down-comment"></div>
+                                </div>
+                                {this.state.comment['by']}
+                                <p className="time">
+                                    {getHumanReadableTimeElapsed(this.state.comment['time'])}
+                                </p>
+                            </button>
+                        </div>
                     </div>
                 )
             }
