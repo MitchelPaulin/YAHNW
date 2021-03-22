@@ -6,6 +6,7 @@ a {
     font-size: 0.43em;
     text-align: left;
     overflow-x: hidden;
+    padding-right: 1%;
 }
 
 .comment-body { 
