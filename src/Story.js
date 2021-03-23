@@ -47,16 +47,18 @@ class Story extends Component {
                             {this.state.json['url']}
                         </a>
                     </div>
-                    <div style={{ float: 'right', width: '8%' }}>
-                        <p className="inline">
-                            {this.state.json['score']}
-                        </p>
-                        <div className="triangle-up inline" />
-                        <div className="block" onClick={() => this.commentIconClicked()}>
-                            <p className="inline">
+                    <div className="comments-and-points-box">
+                        <div className="flex">
+                            <p className="score">
+                                {this.state.json['score']}
+                            </p>
+                            <div className="triangle-up" />
+                        </div>
+                        <div className="flex" onClick={() => this.commentIconClicked()}>
+                            <p className="comment-count">
                                 {this.state.json['kids'] ? this.state.json['kids'].length : 0}
                             </p>
-                            <img src={bubble} alt="speech bubble" style={{ width: "25%" }} />
+                            <img src={bubble} alt="speech bubble" className="speech-bubble" />
                         </div>
                     </div>
                     <div style={{ clear: 'both' }} />

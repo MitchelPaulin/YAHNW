@@ -33,14 +33,14 @@
     padding-left: 1%;
 }
 
-.inline {
-    display: inline-block;
-    margin-right: 10px;
+.score {
     font-size: 0.42em;
+    padding-right: 10px;
 }
 
-.block {
-    display: block;
+.comment-count {
+    font-size: 0.42em;
+    padding-right: 10px;
 }
 
 .triangle-up {
@@ -49,4 +49,20 @@
     border-left: 0.4em solid transparent;
     border-right: 0.4em solid transparent;
     border-bottom: 0.8em solid #3b2e2a;
+    font-size: 0.42em;
+}
+
+.comments-and-points-box {
+    float: right;
+    width: 60px;
+    padding-top: 0.3%;
+}
+
+.speech-bubble {
+    width: 17px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
 }

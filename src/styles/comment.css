@@ -36,6 +36,7 @@ a {
     border-left: 0.8em solid transparent;
     border-right: 0.8em solid transparent;
     border-bottom: 1.6em solid #3b2e2a;
+    font-size: 0.5em;
 }
 
 .triangle-down-comment {
@@ -44,6 +45,7 @@ a {
     border-left: 0.8em solid transparent;
     border-right: 0.8em solid transparent;
     border-top: 1.6em solid #3b2e2a;
+    font-size: 0.5em;
 }
 
 .time {
@@ -58,4 +60,14 @@ a {
     border-left: 2px solid #a5a09f;
     padding-bottom: 1px;
     margin-left: 4px;
+}
+
+.triangle-box {
+    display: inline-block;
+    padding-left: 2%;
+    padding-right: 10px;
+}
+
+.inline {
+    display: inline-block;
 }
