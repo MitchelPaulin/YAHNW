@@ -22,11 +22,11 @@ class Ribbon extends Component {
                     YAHNW
                 </a>
                 <div className="button-box">
-                    <button className="story-button" onClick={() => this.storyButtonClicked('Best')}>
-                        {this.state.selectedButton === 'Best' ? <b>Best</b> : <p>Best</p>}
-                    </button>
                     <button className="story-button" onClick={() => this.storyButtonClicked('Top')}>
                         {this.state.selectedButton === 'Top' ? <b>Top</b> : <p>Top</p>}
+                    </button>
+                    <button className="story-button" onClick={() => this.storyButtonClicked('Best')}>
+                        {this.state.selectedButton === 'Best' ? <b>Best</b> : <p>Best</p>}
                     </button>
                     <button className="story-button" onClick={() => this.storyButtonClicked('New')}>
                         {this.state.selectedButton === 'New' ? <b>New</b> : <p>New</p>}
