@@ -7,6 +7,7 @@ a {
     text-align: left;
     overflow-x: hidden;
     padding-right: 1%;
+    padding-bottom: 1%;
 }
 
 .comment-body { 

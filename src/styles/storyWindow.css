@@ -14,13 +14,13 @@
 }
 
 .box-left {
-    height: 94vh;
+    height: 95vh;
     width: 35vw;
     overflow-y: scroll;
 }
 
 .box-right {
-    height: 94vh;
+    height: 95vh;
     width: 65vw;
     overflow-y: scroll;
 }
