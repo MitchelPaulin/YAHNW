@@ -58,6 +58,13 @@
     padding-top: 0.3%;
 }
 
+.points-box {
+    float: right;
+    width: 60px;
+    padding-top: 0.3%;
+    font-size: 1.2em;
+}
+
 .speech-bubble {
     width: 25%;
 }

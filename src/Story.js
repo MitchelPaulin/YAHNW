@@ -28,7 +28,42 @@ class Story extends Component {
     }
 
     render() {
-        if (this.state.json) {
+
+        if (!this.state.json) {
+            return <div></div>;
+        }
+
+        if (this.props.isMobile) {
+            return (
+                <div className="bottom" style={this.props.selected ? { borderLeft: '10px solid #3b2e2a' } : {}}>
+                    <div style={{ float: 'left', width: '85%' }}>
+                        <a className="title" href={this.state.json['url']}>
+                            {this.state.json['title']}
+                        </a>
+                        <div style={{ display: 'flex' }}>
+                            <p className="author">
+                                {this.state.json['by']}
+                            </p>
+                            <p className="time-story">
+                                {getHumanReadableTimeElapsed(this.state.json['time'])}
+                            </p>
+                        </div>
+                        <a className="link" href={this.state.json['url']}>
+                            {this.state.json['url']}
+                        </a>
+                    </div>
+                    <div className="points-box">
+                        <div className="flex">
+                            <p className="score">
+                                {this.state.json['score']}
+                            </p>
+                            <div className="triangle-up" />
+                        </div>
+                    </div>
+                    <div style={{ clear: 'both' }} />
+                </div>
+            )
+        } else {
             return (
                 <div className="bottom" style={this.props.selected ? { borderLeft: '10px solid #3b2e2a' } : {}}>
                     <div style={{ float: 'left', width: '85%' }}>
@@ -65,9 +100,8 @@ class Story extends Component {
                 </div>
             )
         }
-        return (
-            <div></div>
-        )
+
+
     }
 }
 

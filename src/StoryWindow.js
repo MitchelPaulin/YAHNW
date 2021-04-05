@@ -11,7 +11,8 @@ class StoryWindow extends Component {
         this.state = {
             data: null,
             kids: null,
-            selectedStory: null
+            selectedStory: null,
+            width: window.innerWidth
         }
     }
 
@@ -28,7 +29,12 @@ class StoryWindow extends Component {
 
     componentDidMount() {
         this.fetchStories();
+        window.addEventListener('resize', this.handleWindowSizeChange);
     }
+
+    handleWindowSizeChange = () => {
+        this.setState({ width: window.innerWidth });
+    };
 
     fetchStories() {
         let url;
@@ -49,23 +55,38 @@ class StoryWindow extends Component {
             }.bind(this));
     }
 
+    isMobileView() {
+        return this.state.width <= 1000;
+    }
+
     render() {
 
         if (this.state.data) {
             let stories = [];
             for (let s of this.state.data) {
-                stories.push(<Story key={s} id={s} commentCallback={this.commentClickCallback} selected={this.state.selectedStory === s}></Story>)
+                stories.push(<Story key={s} id={s} commentCallback={this.commentClickCallback} isMobile={this.isMobileView()} selected={this.state.selectedStory === s && !this.isMobileView()}></Story>)
             }
-            return (
-                <div className="wrap">
-                    <div className="story-window box-left" ref={this.ref}>
-                        {stories}
+            if (this.isMobileView()) {
+                return (
+                    <div className="wrap">
+                        <div className="story-window box-full" ref={this.ref}>
+                            {stories}
+                        </div>
                     </div>
-                    <div className="box-right">
-                        <CommentWindow kids={this.state.kids}></CommentWindow>
+                );
+            } else {
+                return (
+                    <div className="wrap">
+                        <div className="story-window box-left" ref={this.ref}>
+                            {stories}
+                        </div>
+                        <div className="box-right">
+                            <CommentWindow kids={this.state.kids}></CommentWindow>
+                        </div>
                     </div>
-                </div>
-            );
+                );
+            }
+
         }
 
         return (
