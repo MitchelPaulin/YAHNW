@@ -12,7 +12,7 @@ class StoryWindow extends Component {
             data: null,
             kids: null,
             selectedStory: null,
-            width: window.innerWidth
+            isMobile: this.isMobileView()
         }
     }
 
@@ -33,7 +33,9 @@ class StoryWindow extends Component {
     }
 
     handleWindowSizeChange = () => {
-        this.setState({ width: window.innerWidth });
+        if (this.state.isMobile !== this.isMobileView()) {
+            this.setState({ isMobile: !this.state.isMobile })
+        }
     };
 
     fetchStories() {
@@ -56,7 +58,7 @@ class StoryWindow extends Component {
     }
 
     isMobileView() {
-        return this.state.width <= 1000;
+        return window.innerWidth <= 1000;
     }
 
     render() {
@@ -64,7 +66,7 @@ class StoryWindow extends Component {
         if (this.state.data) {
             let stories = [];
             for (let s of this.state.data) {
-                stories.push(<Story key={s} id={s} commentCallback={this.commentClickCallback} isMobile={this.isMobileView()} selected={this.state.selectedStory === s && !this.isMobileView()}></Story>)
+                stories.push(<Story key={s} id={s} commentCallback={this.commentClickCallback} isMobile={this.state.isMobile} selected={this.state.selectedStory === s && !this.state.isMobile}></Story>)
             }
             if (this.isMobileView()) {
                 return (
