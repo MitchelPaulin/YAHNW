@@ -32,6 +32,10 @@ class StoryWindow extends Component {
         window.addEventListener('resize', this.handleWindowSizeChange);
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
     handleWindowSizeChange = () => {
         if (this.state.isMobile !== this.isMobileView()) {
             this.setState({ isMobile: !this.state.isMobile })

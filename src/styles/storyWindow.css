@@ -23,8 +23,8 @@
 }
 
 .box-full {
-    width: 100vh;
-    overflow-y: scroll;
+    overflow-y: none;
     text-align: left;
-    float: left;
+    width: 99%;
+    padding-right: 1%;
 }
