@@ -5,9 +5,10 @@
     color: black;
 }
 
-.bottom {
+.story-container {
     padding-bottom: 2%;
     padding-left: 1.5%;
+    padding-right: 1.2%;
     border-bottom: 1px solid #3b2e2a;
 }
 
