@@ -32,3 +32,7 @@
   outline: none;
   cursor: pointer;
 }
+
+.story-button:hover{
+  font-weight: bold;
+}

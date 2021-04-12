@@ -76,8 +76,7 @@
 }
 
 .comment-button:hover {
-    background-color: var(--background-color-hover);
-    border-radius: 15px;
+    font-weight: bold;
 }
 
 .comment-button {
