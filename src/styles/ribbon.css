@@ -1,5 +1,5 @@
 .ribbon {
-  background-color: #3b2e2a;
+  background-color: var(--background-color-dark);
   text-align: left;
   font-weight: bold;
   padding-left: 1%;

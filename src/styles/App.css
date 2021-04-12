@@ -1,6 +1,12 @@
+:root {
+  --background-color-light: #e1e1db;
+  --background-color-dark: #3b2e2a;
+  --background-color-hover: #c9c9ba;
+}
+
 .App {
   text-align: center;
-  background-color: #e1e1db;
+  background-color: var(--background-color-light);
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -9,7 +9,7 @@
     padding-bottom: 2%;
     padding-left: 1.5%;
     padding-right: 1.2%;
-    border-bottom: 1px solid #3b2e2a;
+    border-bottom: 1px solid var(--background-color-dark);
 }
 
 .link {
@@ -26,7 +26,7 @@
 .author {
     font-size: 0.45em;
     padding-left: 0.5%;
-    color: #3b2e2a;
+    color: var(--background-color-dark);
 }
 
 .time-story {
@@ -49,7 +49,7 @@
     height: 0;
     border-left: 0.4em solid transparent;
     border-right: 0.4em solid transparent;
-    border-bottom: 0.8em solid #3b2e2a;
+    border-bottom: 0.8em solid var(--background-color-dark);
     font-size: 0.42em;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .comment-button:hover {
-    background-color: #c9c9ba;
+    background-color: var(--background-color-hover);
     border-radius: 15px;
 }
 
