@@ -67,10 +67,24 @@
 }
 
 .speech-bubble {
-    width: 25%;
+    width: 30%;
 }
 
 .flex {
     display: flex;
     align-items: center;
+}
+
+.comment-button:hover {
+    background-color: #c9c9ba;
+    border-radius: 15px;
+}
+
+.comment-button {
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1em;
 }

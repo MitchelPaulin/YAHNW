@@ -89,12 +89,12 @@ class Story extends Component {
                             </p>
                             <div className="triangle-up" />
                         </div>
-                        <div className="flex" onClick={() => this.commentIconClicked()}>
+                        <button className="flex comment-button" onClick={() => this.commentIconClicked()}>
                             <p className="comment-count">
                                 {this.state.json['kids'] ? this.state.json['kids'].length : 0}
                             </p>
                             <img src={bubble} alt="speech bubble" className="speech-bubble" />
-                        </div>
+                        </button>
                     </div>
                     <div style={{ clear: 'both' }} />
                 </div>

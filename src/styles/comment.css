@@ -29,6 +29,7 @@ a {
     border: none;
     padding: 0px;
     outline: none;
+    cursor: pointer;
 }
 
 .triangle-up-comment {
