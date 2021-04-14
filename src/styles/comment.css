@@ -1,8 +1,4 @@
-a {
-    color: var(--background-color-dark);
-}
-
-.comment {
+.comment-window {
     font-size: 0.43em;
     text-align: left;
     overflow-x: hidden;
@@ -14,7 +10,7 @@ a {
     padding-left: 3%;
 }
 
-.click-comment {
+.click-comment-message {
     font-size: 75%;
     color: grey;
 }
@@ -25,11 +21,7 @@ a {
     width: 100%;
     text-align: left;
     font-size: 1em;
-    background-color: transparent;
-    border: none;
     padding: 0px;
-    outline: none;
-    cursor: pointer;
 }
 
 .triangle-up-comment {

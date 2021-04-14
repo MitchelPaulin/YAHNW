@@ -13,3 +13,14 @@
   font-size: calc(10px + 2vmin);
   color: black;
 }
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+a {
+  color: var(--background-color-dark);
+}

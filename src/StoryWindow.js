@@ -23,7 +23,7 @@ class StoryWindow extends Component {
     componentDidUpdate(prevProps) {
         if (this.props.storyMode !== prevProps.storyMode) {
             this.fetchStories();
-            this.ref.current.scrollTo(0, 0); // scroll to top of page
+            this.scrollToTopOfPage();
         }
     }
 
@@ -41,6 +41,10 @@ class StoryWindow extends Component {
             this.setState({ isMobile: !this.state.isMobile })
         }
     };
+
+    scrollToTopOfPage() {
+        this.ref.current.scrollTo(0, 0);
+    }
 
     fetchStories() {
         let url;

@@ -20,17 +20,12 @@
 }
 
 .story-button {
-  border: transparent;
-  text-decoration: none;
   text-align: center;
-  background-color: transparent;
   color: white;
   font-size: 50%;
   padding-right: 5%;
   padding-left: 5%;
   width: 33%;
-  outline: none;
-  cursor: pointer;
 }
 
 .story-button:hover{
