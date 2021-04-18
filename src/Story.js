@@ -40,7 +40,7 @@ class Story extends Component {
                         <a className="title" href={this.state.json['url']}>
                             {this.state.json['title']}
                         </a>
-                        <div style={{ display: 'flex' }}>
+                        <div className="flex">
                             <p className="author">
                                 {this.state.json['by']}
                             </p>
@@ -70,7 +70,7 @@ class Story extends Component {
                         <a className="title" href={this.state.json['url']}>
                             {this.state.json['title']}
                         </a>
-                        <div style={{ display: 'flex' }}>
+                        <div className="flex">
                             <p className="author">
                                 {this.state.json['by']}
                             </p>

@@ -4,6 +4,8 @@
   font-weight: bold;
   padding-left: 1%;
   height: 5vh;
+  display: flex;
+  align-items: center;
 }
 
 .site-title {
@@ -13,10 +15,9 @@
 }
 
 .button-box {
-  float: right;
+  margin-left: auto;
   width: 15%;
   min-width: 100px;
-  vertical-align: middle;
 }
 
 .story-button {
@@ -26,6 +27,7 @@
   padding-right: 5%;
   padding-left: 5%;
   width: 33%;
+  vertical-align: center;
 }
 
 .story-button:hover{
