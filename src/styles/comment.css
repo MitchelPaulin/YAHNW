@@ -6,6 +6,19 @@
     padding-bottom: 1%;
 }
 
+.comment-text-box {
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-size: 0.45em;
+    padding-left: 2%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: var(--background-color-medium);
+    border-bottom: 1px solid var(--background-color-dark);
+}
+
 .comment-body {
     padding-left: 3%;
 }

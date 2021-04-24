@@ -9,15 +9,16 @@ class StoryWindow extends Component {
         super(props);
         this.ref = React.createRef();
         this.state = {
-            data: null,
-            kids: null,
+            storyIds: null,
+            storyCommentIds: null,
             selectedStory: null,
+            selectedStoryText: null,
             isMobile: this.isMobileView()
         }
     }
 
-    commentClickCallback = (kidsArray, id) => {
-        this.setState({ kids: kidsArray, selectedStory: id });
+    commentClickCallback = (kidsArray, id, displayText) => {
+        this.setState({ storyCommentIds: kidsArray, selectedStory: id, selectedStoryText: displayText });
     }
 
     componentDidUpdate(prevProps) {
@@ -61,7 +62,7 @@ class StoryWindow extends Component {
         fetch(url)
             .then((resp) => resp.json())
             .then(function (response) {
-                this.setState({ data: response });
+                this.setState({ storyIds: response });
             }.bind(this));
     }
 
@@ -71,10 +72,10 @@ class StoryWindow extends Component {
 
     render() {
 
-        if (this.state.data) {
+        if (this.state.storyIds) {
             let stories = [];
-            for (let s of this.state.data) {
-                stories.push(<Story key={s} id={s} commentCallback={this.commentClickCallback} isMobile={this.state.isMobile} selected={this.state.selectedStory === s && !this.state.isMobile}></Story>)
+            for (let storyId of this.state.storyIds) {
+                stories.push(<Story key={storyId} id={storyId} commentCallback={this.commentClickCallback} isMobile={this.state.isMobile} selected={this.state.selectedStory === storyId && !this.state.isMobile}></Story>)
             }
             if (this.isMobileView()) {
                 return (
@@ -91,7 +92,7 @@ class StoryWindow extends Component {
                             {stories}
                         </div>
                         <div className="box-right">
-                            <CommentWindow kids={this.state.kids}></CommentWindow>
+                            <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText}></CommentWindow>
                         </div>
                     </div>
                 );
