@@ -2,7 +2,7 @@
   --background-color-light: #e1e1db;
   --background-color-dark: #3b2e2a;
   --background-color-medium: #c9c9ba;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .App {
