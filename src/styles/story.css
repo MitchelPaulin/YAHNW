@@ -3,6 +3,14 @@
     font-size: 0.5em;
     font-weight: bold;
     color: black;
+    padding-top: 2.5%;
+    padding-bottom: 1%;
+    display: block;
+}
+
+.story-card {
+    float: left;
+    width: 85%;
 }
 
 .story-container {

@@ -36,7 +36,7 @@ class Story extends Component {
         if (this.props.isMobile) {
             return (
                 <div className="story-container" style={this.props.selected ? { borderLeft: '10px solid #3b2e2a' } : {}}>
-                    <div style={{ float: 'left', width: '85%' }}>
+                    <div className="story-card">
                         <a className="title" href={this.state.storyJson['url']}>
                             {this.state.storyJson['title']}
                         </a>
