@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/YAHNW/static/css/main.e1c09e8b.chunk.css",
-    "main.js": "/YAHNW/static/js/main.bd3bb9f1.chunk.js",
-    "main.js.map": "/YAHNW/static/js/main.bd3bb9f1.chunk.js.map",
+    "main.css": "/YAHNW/static/css/main.744dfc4a.chunk.css",
+    "main.js": "/YAHNW/static/js/main.bc59b1b5.chunk.js",
+    "main.js.map": "/YAHNW/static/js/main.bc59b1b5.chunk.js.map",
     "runtime-main.js": "/YAHNW/static/js/runtime-main.668da74e.js",
     "runtime-main.js.map": "/YAHNW/static/js/runtime-main.668da74e.js.map",
     "static/js/2.a19b221b.chunk.js": "/YAHNW/static/js/2.a19b221b.chunk.js",
     "static/js/2.a19b221b.chunk.js.map": "/YAHNW/static/js/2.a19b221b.chunk.js.map",
     "index.html": "/YAHNW/index.html",
-    "static/css/main.e1c09e8b.chunk.css.map": "/YAHNW/static/css/main.e1c09e8b.chunk.css.map",
+    "static/css/main.744dfc4a.chunk.css.map": "/YAHNW/static/css/main.744dfc4a.chunk.css.map",
     "static/js/2.a19b221b.chunk.js.LICENSE.txt": "/YAHNW/static/js/2.a19b221b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.668da74e.js",
     "static/js/2.a19b221b.chunk.js",
-    "static/css/main.e1c09e8b.chunk.css",
-    "static/js/main.bd3bb9f1.chunk.js"
+    "static/css/main.744dfc4a.chunk.css",
+    "static/js/main.bc59b1b5.chunk.js"
   ]
 }
