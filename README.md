@@ -4,8 +4,6 @@
 
 Made using the [official hacker news API](https://github.com/HackerNews/API) and React 
 
-![website screenshot](./demo/demo.png)
-
 ## Run the website locally 
 
 ```bash
