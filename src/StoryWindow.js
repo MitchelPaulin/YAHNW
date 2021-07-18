@@ -48,15 +48,11 @@ class StoryWindow extends Component {
     }
 
     fetchStories() {
-        let url;
-        if (this.props.storyMode === 'Top') {
-            url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
-        } else if (this.props.storyMode === 'Best') {
+        let url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
+        if (this.props.storyMode === 'Best') {
             url = 'https://hacker-news.firebaseio.com/v0/beststories.json';
         } else if (this.props.storyMode === 'New') {
             url = 'https://hacker-news.firebaseio.com/v0/newstories.json';
-        } else {
-            url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
         }
 
         fetch(url)
@@ -75,7 +71,13 @@ class StoryWindow extends Component {
         if (this.state.storyIds) {
             let stories = [];
             for (let storyId of this.state.storyIds) {
-                stories.push(<Story key={storyId} id={storyId} commentCallback={this.commentClickCallback} isMobile={this.state.isMobile} selected={this.state.selectedStory === storyId && !this.state.isMobile}></Story>)
+                stories.push(<Story
+                    key={storyId}
+                    id={storyId}
+                    commentCallback={this.commentClickCallback}
+                    isMobile={this.state.isMobile}
+                    selected={this.state.selectedStory === storyId && !this.state.isMobile}>
+                </Story>)
             }
             if (this.isMobileView()) {
                 return (

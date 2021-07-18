@@ -84,7 +84,8 @@
 }
 
 .comment-button:hover {
-    font-weight: bold;
+    color: grey;
+    font-weight: number;
 }
 
 .comment-button {

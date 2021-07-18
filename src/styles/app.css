@@ -25,3 +25,7 @@ button {
 a {
   color: var(--background-color-dark);
 }
+
+a:hover {
+  color: grey;
+}

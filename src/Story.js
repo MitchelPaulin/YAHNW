@@ -27,6 +27,16 @@ class Story extends Component {
         this.props.commentCallback(this.state.storyJson['kids'], this.state.storyJson['id'], this.state.storyJson['text']);
     }
 
+    /*
+        Remove the http(s)://www. from links to make them easier to read
+    */
+    minimizeUrl(url) {
+        if (url) {
+            return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "");
+        } 
+        return '';
+    }
+
     render() {
 
         if (!this.state.storyJson) {
@@ -49,7 +59,7 @@ class Story extends Component {
                             </p>
                         </div>
                         <a className="link" href={this.state.storyJson['url']}>
-                            {this.state.storyJson['url']}
+                            {this.minimizeUrl(this.state.storyJson['url'])}
                         </a>
                     </div>
                     <div className="points-box">
@@ -79,7 +89,7 @@ class Story extends Component {
                             </p>
                         </div>
                         <a className="link" href={this.state.storyJson['url']}>
-                            {this.state.storyJson['url']}
+                            {this.minimizeUrl(this.state.storyJson['url'])}
                         </a>
                     </div>
                     <div className="comments-and-points-box">
