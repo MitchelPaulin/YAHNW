@@ -34,14 +34,13 @@
 .author {
     font-size: 0.45em;
     padding-left: 0.5%;
-    color: #ffffff;
-    opacity: 60%;
+    color: grey;
 }
 
 .time-story {
     font-size: 0.45em;
     padding-left: 1%;
-    opacity: 60%;
+    color: grey;
 }
 
 .score {
@@ -81,7 +80,7 @@
     width: 50px;
     padding-top: 0.3%;
     font-size: 25px;
-    opacity: 60%;
+    color: grey;
 }
 
 .speech-bubble {
