@@ -1,5 +1,4 @@
 .ribbon {
-  background-color: var(--background-color-dark);
   text-align: left;
   font-weight: bold;
   padding-left: 1%;
@@ -9,9 +8,14 @@
 }
 
 .site-title {
-  font-size: 60%;
-  color: white;
+  font-size: 70%;
+  color: var(--highlight-color-purple);
   text-decoration: none;
+}
+
+.logo {
+  height: 80%;
+  padding-right: 10px;
 }
 
 .button-box {
@@ -22,14 +26,15 @@
 
 .story-button {
   text-align: center;
-  color: white;
-  font-size: 50%;
+  color: var(--highlight-color-purple);
+  font-size: 55%;
   padding-right: 5%;
   padding-left: 5%;
   width: 33%;
+  border-radius: 10px;
   vertical-align: center;
 }
 
 .story-button:hover {
-  font-weight: bold;
+  color: var(--highlight-color-green);
 }

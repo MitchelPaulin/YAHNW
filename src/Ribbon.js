@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles/ribbon.css'
+import yahnw from './imgs/yahnw.png';
 
 class Ribbon extends Component {
 
@@ -16,20 +17,30 @@ class Ribbon extends Component {
     }
 
     render() {
+
+        const styling = {
+            backgroundColor: '#272727'
+        }
+
         return (
             <div className="ribbon">
-                <a href="https://github.com/MitchelPaulin/YAHNW" className="site-title">
-                    YAHNW
-                </a>
+                <img src={yahnw} className="logo"></img>
+                <p>YAHNW</p>
                 <div className="button-box">
-                    <button className="story-button" onClick={() => this.storyButtonClicked('Top')}>
-                        {this.state.selectedButton === 'Top' ? <b>Top</b> : <p>Top</p>}
+                    <button className="story-button"
+                        style={this.state.selectedButton === 'Top' ? styling : {}}
+                        onClick={() => this.storyButtonClicked('Top')}>
+                        <p>Top</p>
                     </button>
-                    <button className="story-button" onClick={() => this.storyButtonClicked('Best')}>
-                        {this.state.selectedButton === 'Best' ? <b>Best</b> : <p>Best</p>}
+                    <button className="story-button"
+                        style={this.state.selectedButton === 'Best' ? styling : {}}
+                        onClick={() => this.storyButtonClicked('Best')}>
+                        <p>Best</p>
                     </button>
-                    <button className="story-button" onClick={() => this.storyButtonClicked('New')}>
-                        {this.state.selectedButton === 'New' ? <b>New</b> : <p>New</p>}
+                    <button className="story-button"
+                        style={this.state.selectedButton === 'New' ? styling : {}}
+                        onClick={() => this.storyButtonClicked('New')}>
+                        <p>New</p>
                     </button>
                 </div>
             </div>

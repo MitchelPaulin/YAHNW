@@ -33,7 +33,7 @@ class Story extends Component {
     minimizeUrl(url) {
         if (url) {
             return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "");
-        } 
+        }
         return '';
     }
 
@@ -43,9 +43,13 @@ class Story extends Component {
             return <div></div>;
         }
 
+        const styling = {
+            backgroundColor: this.props.selected ? '#272727' : '',
+        }
+
         if (this.props.isMobile) {
             return (
-                <div className="story-container" style={this.props.selected ? { borderLeft: '10px solid #3b2e2a' } : {}}>
+                <div className="story-container" style={styling}>
                     <div className="story-card">
                         <a className="title" href={this.state.storyJson['url']}>
                             {this.state.storyJson['title']}
@@ -75,7 +79,7 @@ class Story extends Component {
             )
         } else {
             return (
-                <div className="story-container" style={this.props.selected ? { borderLeft: '10px solid #3b2e2a' } : {}}>
+                <div className="story-container" style={styling}>
                     <div style={{ float: 'left', width: '85%' }}>
                         <a className="title" href={this.state.storyJson['url']}>
                             {this.state.storyJson['title']}

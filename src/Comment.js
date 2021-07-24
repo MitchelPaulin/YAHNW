@@ -58,10 +58,10 @@ class Comment extends Component {
             if (!this.state.isHidden) {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
-                        <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid #a5a09f') }}>
+                        <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
                             <button className="comment-author" onClick={() => this.authorClicked()}>
                                 <div className="triangle-box">
-                                    <div className="triangle-up-comment"></div>
+                                    <div className="triangle-up-comment"/>
                                 </div>
                                 {this.state.comment['by']}
                                 <p className="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
@@ -79,10 +79,10 @@ class Comment extends Component {
             } else {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
-                        <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid #a5a09f') }}>
+                        <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
                             <button className="comment-author" onClick={() => this.authorClicked()}>
                                 <div className="triangle-box">
-                                    <div className="triangle-down-comment"></div>
+                                    <div className="triangle-down-comment"/>
                                 </div>
                                 {this.state.comment['by']}
                                 <p className="time">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Comment from './Comment';
 import DOMPurify from 'dompurify';
 import './styles/comment.css';
+import bubble from './imgs/bubble.png';
 
 class CommentWindow extends Component {
 
@@ -38,7 +39,8 @@ class CommentWindow extends Component {
 
         return (
             <div>
-                <p className="click-comment-message">Click on a speech bubble</p>
+                <p className="click-comment-message">Click on a</p>
+                <img src={bubble} alt="speech bubble" style={{ width: '3%' }} />
             </div>
         )
     }
