@@ -29,12 +29,11 @@
 .comment-author {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     border-radius: 10px;
-    color: #ffffff;
+    color: grey;
     width: 100%;
     text-align: left;
     font-size: 1em;
     padding: 0px;
-    opacity: 60%;
 }
 
 .comment-author:hover{
@@ -46,7 +45,7 @@
     height: 0;
     border-left: 0.8em solid transparent;
     border-right: 0.8em solid transparent;
-    border-bottom: 1.6em solid #ffffff;
+    border-bottom: 1.6em solid grey;
     font-size: 0.5em;
 }
 
@@ -55,7 +54,7 @@
     height: 0;
     border-left: 0.8em solid transparent;
     border-right: 0.8em solid transparent;
-    border-top: 1.6em solid #ffffff;
+    border-top: 1.6em solid grey;
     font-size: 0.5em;
 }
 
@@ -63,8 +62,7 @@
     padding-left: 1%;
     font-size: 0.9em;
     display: inline-block;
-    color: #ffffff;
-    opacity: 60%;
+    color: grey;
 }
 
 .comment-box {
