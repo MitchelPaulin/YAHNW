@@ -28,11 +28,9 @@
   text-align: center;
   color: var(--highlight-color-purple);
   font-size: 55%;
-  padding-right: 5%;
-  padding-left: 5%;
+  padding: 2% 2% 2% 2%;
   width: 33%;
   border-radius: 10px;
-  vertical-align: center;
 }
 
 .story-button:hover {

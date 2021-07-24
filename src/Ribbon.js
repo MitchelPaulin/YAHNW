@@ -30,17 +30,17 @@ class Ribbon extends Component {
                     <button className="story-button"
                         style={this.state.selectedButton === 'Top' ? styling : {}}
                         onClick={() => this.storyButtonClicked('Top')}>
-                        <p>Top</p>
+                        <b>Top</b>
                     </button>
                     <button className="story-button"
                         style={this.state.selectedButton === 'Best' ? styling : {}}
                         onClick={() => this.storyButtonClicked('Best')}>
-                        <p>Best</p>
+                        <b>Best</b>
                     </button>
                     <button className="story-button"
                         style={this.state.selectedButton === 'New' ? styling : {}}
                         onClick={() => this.storyButtonClicked('New')}>
-                        <p>New</p>
+                        <b>New</b>
                     </button>
                 </div>
             </div>
