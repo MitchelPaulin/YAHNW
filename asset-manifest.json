@@ -5,17 +5,17 @@
     "main.js.map": "/YAHNW/static/js/main.49bbc98a.chunk.js.map",
     "runtime-main.js": "/YAHNW/static/js/runtime-main.668da74e.js",
     "runtime-main.js.map": "/YAHNW/static/js/runtime-main.668da74e.js.map",
-    "static/js/2.a19b221b.chunk.js": "/YAHNW/static/js/2.a19b221b.chunk.js",
-    "static/js/2.a19b221b.chunk.js.map": "/YAHNW/static/js/2.a19b221b.chunk.js.map",
+    "static/js/2.0d37d132.chunk.js": "/YAHNW/static/js/2.0d37d132.chunk.js",
+    "static/js/2.0d37d132.chunk.js.map": "/YAHNW/static/js/2.0d37d132.chunk.js.map",
     "index.html": "/YAHNW/index.html",
     "static/css/main.bb584a78.chunk.css.map": "/YAHNW/static/css/main.bb584a78.chunk.css.map",
-    "static/js/2.a19b221b.chunk.js.LICENSE.txt": "/YAHNW/static/js/2.a19b221b.chunk.js.LICENSE.txt",
+    "static/js/2.0d37d132.chunk.js.LICENSE.txt": "/YAHNW/static/js/2.0d37d132.chunk.js.LICENSE.txt",
     "static/media/bubble.b5f42b63.png": "/YAHNW/static/media/bubble.b5f42b63.png",
     "static/media/yahnw.f8a8da28.png": "/YAHNW/static/media/yahnw.f8a8da28.png"
   },
   "entrypoints": [
     "static/js/runtime-main.668da74e.js",
-    "static/js/2.a19b221b.chunk.js",
+    "static/js/2.0d37d132.chunk.js",
     "static/css/main.bb584a78.chunk.css",
     "static/js/main.49bbc98a.chunk.js"
   ]
