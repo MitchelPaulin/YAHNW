@@ -1,22 +1,15 @@
 {
   "files": {
-    "main.css": "/YAHNW/static/css/main.bb584a78.chunk.css",
-    "main.js": "/YAHNW/static/js/main.49bbc98a.chunk.js",
-    "main.js.map": "/YAHNW/static/js/main.49bbc98a.chunk.js.map",
-    "runtime-main.js": "/YAHNW/static/js/runtime-main.668da74e.js",
-    "runtime-main.js.map": "/YAHNW/static/js/runtime-main.668da74e.js.map",
-    "static/js/2.0d37d132.chunk.js": "/YAHNW/static/js/2.0d37d132.chunk.js",
-    "static/js/2.0d37d132.chunk.js.map": "/YAHNW/static/js/2.0d37d132.chunk.js.map",
+    "main.css": "/YAHNW/static/css/main.0ecc2a49.css",
+    "main.js": "/YAHNW/static/js/main.365102c3.js",
+    "static/media/yahnw.png": "/YAHNW/static/media/yahnw.f8a8da28ac6f07ed793b.png",
+    "static/media/bubble.png": "/YAHNW/static/media/bubble.b5f42b63a94818ba0ec1.png",
     "index.html": "/YAHNW/index.html",
-    "static/css/main.bb584a78.chunk.css.map": "/YAHNW/static/css/main.bb584a78.chunk.css.map",
-    "static/js/2.0d37d132.chunk.js.LICENSE.txt": "/YAHNW/static/js/2.0d37d132.chunk.js.LICENSE.txt",
-    "static/media/bubble.b5f42b63.png": "/YAHNW/static/media/bubble.b5f42b63.png",
-    "static/media/yahnw.f8a8da28.png": "/YAHNW/static/media/yahnw.f8a8da28.png"
+    "main.0ecc2a49.css.map": "/YAHNW/static/css/main.0ecc2a49.css.map",
+    "main.365102c3.js.map": "/YAHNW/static/js/main.365102c3.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.668da74e.js",
-    "static/js/2.0d37d132.chunk.js",
-    "static/css/main.bb584a78.chunk.css",
-    "static/js/main.49bbc98a.chunk.js"
+    "static/css/main.0ecc2a49.css",
+    "static/js/main.365102c3.js"
   ]
 }
