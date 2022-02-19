@@ -7,7 +7,7 @@ type Props = {
     selected: boolean,
     id: string,
     isMobile: boolean,
-    commentCallback: (a: string, b: string, c: string) => void
+    commentCallback: (a: any[], b: string, c: string) => void
 }
 
 type State = {

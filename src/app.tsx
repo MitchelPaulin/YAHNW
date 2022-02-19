@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { StoryType } from './storyType';
-import StoryWindow from './StoryWindow';
+import StoryWindow from './storyWindow';
 import Ribbon from './ribbon';
 import './styles/app.css';
 

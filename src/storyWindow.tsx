@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
 import CommentWindow from './commentWindow';
 import Story from './story';
+import { StoryType } from './storyType';
 import './styles/storyWindow.css'
 
-class StoryWindow extends Component {
+type Props = {
+    storyMode: StoryType
+}
 
-    constructor(props) {
+type State = {
+    isMobile: boolean,
+    selectedStory: string,
+    selectedStoryText: string,
+    storyIds: any[],
+    storyCommentIds: any[]
+}
+
+class StoryWindow extends Component<Props, State> {
+    ref: any;
+
+    constructor(props: Props) {
         super(props);
         this.ref = React.createRef();
         this.state = {
-            storyIds: null,
-            storyCommentIds: null,
-            selectedStory: null,
-            selectedStoryText: null,
+            storyIds: [],
+            storyCommentIds: [],
+            selectedStory: '',
+            selectedStoryText: '',
             isMobile: this.isMobileView()
         }
     }
 
-    commentClickCallback = (kidsArray, id, displayText) => {
+    commentClickCallback = (kidsArray: any[], id: string, displayText: string) => {
         this.setState({ storyCommentIds: kidsArray, selectedStory: id, selectedStoryText: displayText });
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: Props) {
         if (this.props.storyMode !== prevProps.storyMode) {
             this.fetchStories();
             this.scrollToTopOfPage();
@@ -57,9 +71,9 @@ class StoryWindow extends Component {
 
         fetch(url)
             .then((resp) => resp.json())
-            .then(function (response) {
+            .then((response) => {
                 this.setState({ storyIds: response });
-            }.bind(this));
+            });
     }
 
     isMobileView() {
