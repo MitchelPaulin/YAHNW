@@ -1,17 +1,27 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import './styles/ribbon.css'
 import yahnw from './imgs/yahnw.png';
 
-class Ribbon extends Component {
+type StoryType = 'Top' | 'Best' | 'New';
 
-    constructor(props) {
+type RibbonProps = {
+    storyModeChangedCallback: (s: StoryType) => {}
+}
+
+type RibbonState = {
+    selectedButton: StoryType
+}
+
+class Ribbon extends Component<RibbonProps, RibbonState> {
+
+    constructor(props: RibbonProps) {
         super(props);
         this.state = {
             selectedButton: 'Top'
-        }
+        };
     }
 
-    storyButtonClicked(buttonClicked) {
+    storyButtonClicked(buttonClicked: StoryType) {
         this.props.storyModeChangedCallback(buttonClicked);
         this.setState({ selectedButton: buttonClicked });
     }

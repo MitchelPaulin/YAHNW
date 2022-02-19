@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StoryWindow from './StoryWindow';
-import Ribbon from './Ribbon';
+import Ribbon from './ribbon';
 import './styles/app.css';
 
 class App extends Component {
