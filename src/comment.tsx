@@ -1,11 +1,22 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import './styles/comment.css';
 import DOMPurify from 'dompurify';
-import { getHumanReadableTimeElapsed } from './common.ts';
+import { getHumanReadableTimeElapsed } from './common';
 
-class Comment extends Component {
+type Props = {
+    rootKid: string,
+    nesting: number
+}
 
-    constructor(props) {
+type State = {
+    kids: any,
+    comment: any,
+    isHidden: boolean
+}
+
+class Comment extends Component<Props, State> {
+
+    constructor(props: Props) {
         super(props);
         this.state = {
             kids: null,
@@ -14,22 +25,24 @@ class Comment extends Component {
         }
     }
 
-    fetchComments(root) {
+    fetchComments(root: string) {
         let head = 'https://hacker-news.firebaseio.com/v0/item/';
         let tail = '.json'
 
         fetch(head + root + tail)
-            .then((resp) => resp.json())
-            .then(function (response) {
+            .then((resp) => {
+                return resp.json();
+            })
+            .then((response: string) => {
                 this.setState({ comment: response });
-            }.bind(this));
+            });
     }
 
     componentDidMount() {
         this.fetchComments(this.props.rootKid);
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: Props) {
         if (this.props.rootKid !== prevProps.rootKid) {
             this.setState({ isHidden: false });
             this.fetchComments(this.props.rootKid);
@@ -61,7 +74,7 @@ class Comment extends Component {
                         <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
                             <button className="comment-author" onClick={() => this.authorClicked()}>
                                 <div className="triangle-box">
-                                    <div className="triangle-up-comment"/>
+                                    <div className="triangle-up-comment" />
                                 </div>
                                 {this.state.comment['by']}
                                 <p className="time">{getHumanReadableTimeElapsed(this.state.comment['time'])}</p>
@@ -82,7 +95,7 @@ class Comment extends Component {
                         <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
                             <button className="comment-author" onClick={() => this.authorClicked()}>
                                 <div className="triangle-box">
-                                    <div className="triangle-down-comment"/>
+                                    <div className="triangle-down-comment" />
                                 </div>
                                 {this.state.comment['by']}
                                 <p className="time">
