@@ -2,7 +2,7 @@ const secondsInDay = 86400;
 const secondsInHour = 3600;
 const secondsInMinute = 60;
 
-export function getHumanReadableTimeElapsed(unixTimeStamp) {
+export function getHumanReadableTimeElapsed(unixTimeStamp: number): string {
 
     let unixTimeNow = Math.floor(Date.now() / 1000);
     let secondsElapsedSincePost = unixTimeNow - unixTimeStamp;

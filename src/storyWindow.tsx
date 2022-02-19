@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
-import CommentWindow from './CommentWindow';
-import Story from './Story';
+import CommentWindow from './commentWindow';
+import Story from './story';
+import { StoryType } from './storyType';
 import './styles/storyWindow.css'
 
-class StoryWindow extends Component {
+type Props = {
+    storyMode: StoryType
+}
 
-    constructor(props) {
+type State = {
+    isMobile: boolean,
+    selectedStory: number | null,
+    selectedStoryText: string | null,
+    storyIds: number[],
+    storyCommentIds: number[]
+}
+
+class StoryWindow extends Component<Props, State> {
+    ref: any;
+
+    constructor(props: Props) {
         super(props);
         this.ref = React.createRef();
         this.state = {
-            storyIds: null,
-            storyCommentIds: null,
+            storyIds: [],
+            storyCommentIds: [],
             selectedStory: null,
             selectedStoryText: null,
             isMobile: this.isMobileView()
         }
     }
 
-    commentClickCallback = (kidsArray, id, displayText) => {
+    commentClickCallback = (kidsArray: number[], id: number, displayText: string) => {
         this.setState({ storyCommentIds: kidsArray, selectedStory: id, selectedStoryText: displayText });
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: Props) {
         if (this.props.storyMode !== prevProps.storyMode) {
             this.fetchStories();
             this.scrollToTopOfPage();
@@ -57,9 +71,9 @@ class StoryWindow extends Component {
 
         fetch(url)
             .then((resp) => resp.json())
-            .then(function (response) {
+            .then((response) => {
                 this.setState({ storyIds: response });
-            }.bind(this));
+            });
     }
 
     isMobileView() {
@@ -73,7 +87,7 @@ class StoryWindow extends Component {
             for (let storyId of this.state.storyIds) {
                 stories.push(<Story
                     key={storyId}
-                    id={storyId}
+                    id={storyId.toString()}
                     commentCallback={this.commentClickCallback}
                     isMobile={this.state.isMobile}
                     selected={this.state.selectedStory === storyId && !this.state.isMobile}>
@@ -81,20 +95,20 @@ class StoryWindow extends Component {
             }
             if (this.isMobileView()) {
                 return (
-                    <div className="wrap">
-                        <div className="story-window box-full" ref={this.ref}>
+                    <div className='wrap'>
+                        <div className='story-window box-full' ref={this.ref}>
                             {stories}
                         </div>
                     </div>
                 );
             } else {
                 return (
-                    <div className="wrap">
-                        <div className="story-window box-left" ref={this.ref}>
+                    <div className='wrap'>
+                        <div className='story-window box-left' ref={this.ref}>
                             {stories}
                         </div>
-                        <div className="box-right">
-                            <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText}></CommentWindow>
+                        <div className='box-right'>
+                            <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText || ''}></CommentWindow>
                         </div>
                     </div>
                 );
@@ -104,7 +118,7 @@ class StoryWindow extends Component {
 
         return (
             <div>
-                <p className="loading">
+                <p className='loading'>
                     Loading...
                 </p>
             </div>
