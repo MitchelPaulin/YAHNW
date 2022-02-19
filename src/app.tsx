@@ -1,18 +1,24 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import { StoryType } from './storyType';
 import StoryWindow from './StoryWindow';
 import Ribbon from './ribbon';
 import './styles/app.css';
 
-class App extends Component {
+type Props = {};
+type State = {
+  storyMode: StoryType
+}
 
-  constructor(props) {
+class App extends Component<Props, State> {
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       storyMode: 'Top'
     }
   }
 
-  storyModeChanged = (s) => {
+  storyModeChanged = (s: StoryType) => {
     this.setState({ storyMode: s });
   }
 
