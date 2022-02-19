@@ -24,7 +24,7 @@ class App extends Component<Props, State> {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Ribbon storyModeChangedCallback={this.storyModeChanged}></Ribbon>
         <StoryWindow storyMode={this.state.storyMode}></StoryWindow>
       </div>

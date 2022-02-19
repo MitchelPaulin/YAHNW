@@ -95,19 +95,19 @@ class StoryWindow extends Component<Props, State> {
             }
             if (this.isMobileView()) {
                 return (
-                    <div className="wrap">
-                        <div className="story-window box-full" ref={this.ref}>
+                    <div className='wrap'>
+                        <div className='story-window box-full' ref={this.ref}>
                             {stories}
                         </div>
                     </div>
                 );
             } else {
                 return (
-                    <div className="wrap">
-                        <div className="story-window box-left" ref={this.ref}>
+                    <div className='wrap'>
+                        <div className='story-window box-left' ref={this.ref}>
                             {stories}
                         </div>
-                        <div className="box-right">
+                        <div className='box-right'>
                             <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText || ''}></CommentWindow>
                         </div>
                     </div>
@@ -118,7 +118,7 @@ class StoryWindow extends Component<Props, State> {
 
         return (
             <div>
-                <p className="loading">
+                <p className='loading'>
                     Loading...
                 </p>
             </div>

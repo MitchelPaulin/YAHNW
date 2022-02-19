@@ -55,7 +55,7 @@ class Story extends Component<Props, State> {
     */
     minimizeUrl(url: string) {
         if (url) {
-            return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "");
+            return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '');
         }
         return '';
     }
@@ -72,29 +72,29 @@ class Story extends Component<Props, State> {
 
         if (this.props.isMobile) {
             return (
-                <div className="story-container" style={styling}>
-                    <div className="story-card">
-                        <a className="title" href={this.state.storyJson.url}>
+                <div className='story-container' style={styling}>
+                    <div className='story-card'>
+                        <a className='title' href={this.state.storyJson.url}>
                             {this.state.storyJson.title}
                         </a>
-                        <div className="flex">
-                            <p className="author">
+                        <div className='flex'>
+                            <p className='author'>
                                 {this.state.storyJson.by}
                             </p>
-                            <p className="time-story">
+                            <p className='time-story'>
                                 {getHumanReadableTimeElapsed(this.state.storyJson.time)}
                             </p>
                         </div>
-                        <a className="link" href={this.state.storyJson.url}>
+                        <a className='link' href={this.state.storyJson.url}>
                             {this.minimizeUrl(this.state.storyJson.url)}
                         </a>
                     </div>
-                    <div className="points-box">
-                        <div className="flex">
-                            <p className="score">
+                    <div className='points-box'>
+                        <div className='flex'>
+                            <p className='score'>
                                 {this.state.storyJson.score}
                             </p>
-                            <div className="triangle-up" />
+                            <div className='triangle-up' />
                         </div>
                     </div>
                     <div style={{ clear: 'both' }} />
@@ -102,35 +102,35 @@ class Story extends Component<Props, State> {
             )
         } else {
             return (
-                <div className="story-container" style={styling}>
+                <div className='story-container' style={styling}>
                     <div style={{ float: 'left', width: '85%' }}>
-                        <a className="title" href={this.state.storyJson.url}>
+                        <a className='title' href={this.state.storyJson.url}>
                             {this.state.storyJson.title}
                         </a>
-                        <div className="flex">
-                            <p className="author">
+                        <div className='flex'>
+                            <p className='author'>
                                 {this.state.storyJson.by}
                             </p>
-                            <p className="time-story">
+                            <p className='time-story'>
                                 {getHumanReadableTimeElapsed(this.state.storyJson.time)}
                             </p>
                         </div>
-                        <a className="link" href={this.state.storyJson.url}>
+                        <a className='link' href={this.state.storyJson.url}>
                             {this.minimizeUrl(this.state.storyJson.url)}
                         </a>
                     </div>
-                    <div className="comments-and-points-box">
-                        <div className="flex">
-                            <p className="score">
+                    <div className='comments-and-points-box'>
+                        <div className='flex'>
+                            <p className='score'>
                                 {this.state.storyJson.score}
                             </p>
-                            <div className="triangle-up" />
+                            <div className='triangle-up' />
                         </div>
-                        <button className="flex comment-button" onClick={() => this.commentIconClicked()}>
-                            <p className="comment-count">
+                        <button className='flex comment-button' onClick={() => this.commentIconClicked()}>
+                            <p className='comment-count'>
                                 {this.state.storyJson.kids ? this.state.storyJson.kids.length : 0}
                             </p>
-                            <img src={bubble} alt="speech bubble" className="speech-bubble" />
+                            <img src={bubble} alt='speech bubble' className='speech-bubble' />
                         </button>
                     </div>
                     <div style={{ clear: 'both' }} />

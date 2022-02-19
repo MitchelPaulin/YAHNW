@@ -32,21 +32,21 @@ class Ribbon extends Component<Props, State> {
         }
 
         return (
-            <div className="ribbon">
-                <img src={yahnw} className="logo" alt='logo'></img>
+            <div className='ribbon'>
+                <img src={yahnw} className='logo' alt='logo'></img>
                 <p>YAHNW</p>
-                <div className="button-box">
-                    <button className="story-button"
+                <div className='button-box'>
+                    <button className='story-button'
                         style={this.state.selectedButton === 'Top' ? styling : {}}
                         onClick={() => this.storyButtonClicked('Top')}>
                         <b>Top</b>
                     </button>
-                    <button className="story-button"
+                    <button className='story-button'
                         style={this.state.selectedButton === 'Best' ? styling : {}}
                         onClick={() => this.storyButtonClicked('Best')}>
                         <b>Best</b>
                     </button>
-                    <button className="story-button"
+                    <button className='story-button'
                         style={this.state.selectedButton === 'New' ? styling : {}}
                         onClick={() => this.storyButtonClicked('New')}>
                         <b>New</b>

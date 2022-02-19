@@ -81,15 +81,15 @@ class Comment extends Component<Props, State> {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
                         <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
-                            <button className="comment-author" onClick={() => this.authorClicked()}>
-                                <div className="triangle-box">
-                                    <div className="triangle-up-comment" />
+                            <button className='comment-author' onClick={() => this.authorClicked()}>
+                                <div className='triangle-box'>
+                                    <div className='triangle-up-comment' />
                                 </div>
                                 {this.state.comment.by}
-                                <p className="time">{getHumanReadableTimeElapsed(this.state.comment.time)}</p>
+                                <p className='time'>{getHumanReadableTimeElapsed(this.state.comment.time)}</p>
                             </button>
                             <div style={{ paddingLeft: '2%' }}>
-                                <div className="comment-box"
+                                <div className='comment-box'
                                     dangerouslySetInnerHTML={{
                                         __html: purified
                                     }} />
@@ -102,12 +102,12 @@ class Comment extends Component<Props, State> {
                 return (
                     <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
                         <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
-                            <button className="comment-author" onClick={() => this.authorClicked()}>
-                                <div className="triangle-box">
-                                    <div className="triangle-down-comment" />
+                            <button className='comment-author' onClick={() => this.authorClicked()}>
+                                <div className='triangle-box'>
+                                    <div className='triangle-down-comment' />
                                 </div>
                                 {this.state.comment.by}
-                                <p className="time">
+                                <p className='time'>
                                     {getHumanReadableTimeElapsed(this.state.comment.time)}
                                 </p>
                             </button>

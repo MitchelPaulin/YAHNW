@@ -20,7 +20,7 @@ class CommentWindow extends Component<Props> {
             }
             if (this.props.displayText === undefined) {
                 return (
-                    <div className="comment-window">
+                    <div className='comment-window'>
                         {comments}
                     </div>
                 );
@@ -29,11 +29,11 @@ class CommentWindow extends Component<Props> {
 
                 return (
                     <div>
-                        <div className="comment-text-box"
+                        <div className='comment-text-box'
                             dangerouslySetInnerHTML={{
                                 __html: purified
                             }} />
-                        <div className="comment-window">
+                        <div className='comment-window'>
                             {comments}
                         </div>
                     </div>
@@ -44,8 +44,8 @@ class CommentWindow extends Component<Props> {
 
         return (
             <div>
-                <p className="click-comment-message">Click on a</p>
-                <img src={bubble} alt="speech bubble" style={{ width: '3%' }} />
+                <p className='click-comment-message'>Click on a</p>
+                <img src={bubble} alt='speech bubble' style={{ width: '3%' }} />
             </div>
         )
     }
