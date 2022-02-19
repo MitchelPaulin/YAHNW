@@ -5,7 +5,7 @@ import './styles/comment.css';
 import bubble from './imgs/bubble.png';
 
 type Props = {
-    kids: any[],
+    kids: number[],
     displayText: string
 }
 

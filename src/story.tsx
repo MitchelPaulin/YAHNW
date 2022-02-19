@@ -7,11 +7,20 @@ type Props = {
     selected: boolean,
     id: string,
     isMobile: boolean,
-    commentCallback: (a: any[], b: string, c: string) => void
+    commentCallback: (a: number[], b: number, c: string) => void
 }
 
 type State = {
-    storyJson: any
+    storyJson: {
+        kids: number[],
+        id: number,
+        text: string,
+        url: string,
+        by: string,
+        title: string,
+        time: number,
+        score: number
+    } | null;
 }
 
 class Story extends Component<Props, State> {
@@ -36,7 +45,9 @@ class Story extends Component<Props, State> {
     }
 
     commentIconClicked() {
-        this.props.commentCallback(this.state.storyJson['kids'], this.state.storyJson['id'], this.state.storyJson['text']);
+        if (this.state.storyJson) {
+            this.props.commentCallback(this.state.storyJson.kids, this.state.storyJson.id, this.state.storyJson.text);
+        }
     }
 
     /*
@@ -63,25 +74,25 @@ class Story extends Component<Props, State> {
             return (
                 <div className="story-container" style={styling}>
                     <div className="story-card">
-                        <a className="title" href={this.state.storyJson['url']}>
-                            {this.state.storyJson['title']}
+                        <a className="title" href={this.state.storyJson.url}>
+                            {this.state.storyJson.title}
                         </a>
                         <div className="flex">
                             <p className="author">
-                                {this.state.storyJson['by']}
+                                {this.state.storyJson.by}
                             </p>
                             <p className="time-story">
-                                {getHumanReadableTimeElapsed(this.state.storyJson['time'])}
+                                {getHumanReadableTimeElapsed(this.state.storyJson.time)}
                             </p>
                         </div>
-                        <a className="link" href={this.state.storyJson['url']}>
-                            {this.minimizeUrl(this.state.storyJson['url'])}
+                        <a className="link" href={this.state.storyJson.url}>
+                            {this.minimizeUrl(this.state.storyJson.url)}
                         </a>
                     </div>
                     <div className="points-box">
                         <div className="flex">
                             <p className="score">
-                                {this.state.storyJson['score']}
+                                {this.state.storyJson.score}
                             </p>
                             <div className="triangle-up" />
                         </div>
@@ -93,31 +104,31 @@ class Story extends Component<Props, State> {
             return (
                 <div className="story-container" style={styling}>
                     <div style={{ float: 'left', width: '85%' }}>
-                        <a className="title" href={this.state.storyJson['url']}>
-                            {this.state.storyJson['title']}
+                        <a className="title" href={this.state.storyJson.url}>
+                            {this.state.storyJson.title}
                         </a>
                         <div className="flex">
                             <p className="author">
-                                {this.state.storyJson['by']}
+                                {this.state.storyJson.by}
                             </p>
                             <p className="time-story">
-                                {getHumanReadableTimeElapsed(this.state.storyJson['time'])}
+                                {getHumanReadableTimeElapsed(this.state.storyJson.time)}
                             </p>
                         </div>
-                        <a className="link" href={this.state.storyJson['url']}>
-                            {this.minimizeUrl(this.state.storyJson['url'])}
+                        <a className="link" href={this.state.storyJson.url}>
+                            {this.minimizeUrl(this.state.storyJson.url)}
                         </a>
                     </div>
                     <div className="comments-and-points-box">
                         <div className="flex">
                             <p className="score">
-                                {this.state.storyJson['score']}
+                                {this.state.storyJson.score}
                             </p>
                             <div className="triangle-up" />
                         </div>
                         <button className="flex comment-button" onClick={() => this.commentIconClicked()}>
                             <p className="comment-count">
-                                {this.state.storyJson['kids'] ? this.state.storyJson['kids'].length : 0}
+                                {this.state.storyJson.kids ? this.state.storyJson.kids.length : 0}
                             </p>
                             <img src={bubble} alt="speech bubble" className="speech-bubble" />
                         </button>

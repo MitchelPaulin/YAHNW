@@ -10,10 +10,10 @@ type Props = {
 
 type State = {
     isMobile: boolean,
-    selectedStory: string,
-    selectedStoryText: string,
-    storyIds: any[],
-    storyCommentIds: any[]
+    selectedStory: number | null,
+    selectedStoryText: string | null,
+    storyIds: number[],
+    storyCommentIds: number[]
 }
 
 class StoryWindow extends Component<Props, State> {
@@ -25,13 +25,13 @@ class StoryWindow extends Component<Props, State> {
         this.state = {
             storyIds: [],
             storyCommentIds: [],
-            selectedStory: '',
-            selectedStoryText: '',
+            selectedStory: null,
+            selectedStoryText: null,
             isMobile: this.isMobileView()
         }
     }
 
-    commentClickCallback = (kidsArray: any[], id: string, displayText: string) => {
+    commentClickCallback = (kidsArray: number[], id: number, displayText: string) => {
         this.setState({ storyCommentIds: kidsArray, selectedStory: id, selectedStoryText: displayText });
     }
 
@@ -87,7 +87,7 @@ class StoryWindow extends Component<Props, State> {
             for (let storyId of this.state.storyIds) {
                 stories.push(<Story
                     key={storyId}
-                    id={storyId}
+                    id={storyId.toString()}
                     commentCallback={this.commentClickCallback}
                     isMobile={this.state.isMobile}
                     selected={this.state.selectedStory === storyId && !this.state.isMobile}>
@@ -108,7 +108,7 @@ class StoryWindow extends Component<Props, State> {
                             {stories}
                         </div>
                         <div className="box-right">
-                            <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText}></CommentWindow>
+                            <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText || ''}></CommentWindow>
                         </div>
                     </div>
                 );
