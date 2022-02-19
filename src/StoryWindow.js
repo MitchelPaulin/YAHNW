@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CommentWindow from './CommentWindow';
+import CommentWindow from './commentWindow';
 import Story from './Story';
 import './styles/storyWindow.css'
 

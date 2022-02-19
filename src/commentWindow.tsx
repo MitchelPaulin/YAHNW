@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Comment from './Comment';
 import DOMPurify from 'dompurify';
 import './styles/comment.css';
 import bubble from './imgs/bubble.png';
 
-class CommentWindow extends Component {
+type Props = {
+    kids: any[],
+    displayText: string
+}
+
+class CommentWindow extends Component<Props> {
 
     render() {
 
