@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/comment.css';
 import DOMPurify from 'dompurify';
-import { getHumanReadableTimeElapsed } from './common.js';
+import { getHumanReadableTimeElapsed } from './common.ts';
 
 class Comment extends Component {
 

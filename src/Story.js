@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/story.css';
-import { getHumanReadableTimeElapsed } from './common.js';
+import { getHumanReadableTimeElapsed } from './common.ts';
 import bubble from './imgs/bubble.png';
 class Story extends Component {
 
