@@ -1,10 +1,22 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import './styles/story.css';
-import { getHumanReadableTimeElapsed } from './common.ts';
+import { getHumanReadableTimeElapsed } from './common';
 import bubble from './imgs/bubble.png';
-class Story extends Component {
 
-    constructor(props) {
+type Props = {
+    selected: boolean,
+    id: string,
+    isMobile: boolean,
+    commentCallback: (a: string, b: string, c: string) => void
+}
+
+type State = {
+    storyJson: any
+}
+
+class Story extends Component<Props, State> {
+
+    constructor(props: Props) {
         super(props);
         this.state = {
             storyJson: null
@@ -18,9 +30,9 @@ class Story extends Component {
 
         fetch(link + this.props.id + tail)
             .then((resp) => resp.json())
-            .then(function (response) {
+            .then((response) => {
                 this.setState({ storyJson: response });
-            }.bind(this));
+            });
     }
 
     commentIconClicked() {
@@ -30,7 +42,7 @@ class Story extends Component {
     /*
         Remove the http(s)://www. from links to make them easier to read
     */
-    minimizeUrl(url) {
+    minimizeUrl(url: string) {
         if (url) {
             return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "");
         }
