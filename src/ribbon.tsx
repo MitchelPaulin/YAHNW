@@ -33,7 +33,7 @@ class Ribbon extends Component<Props, State> {
 
         return (
             <div className="ribbon">
-                <img src={yahnw} className="logo"></img>
+                <img src={yahnw} className="logo" alt='logo'></img>
                 <p>YAHNW</p>
                 <div className="button-box">
                     <button className="story-button"
