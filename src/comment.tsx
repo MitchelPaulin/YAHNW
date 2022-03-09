@@ -23,6 +23,15 @@ type State = {
     isHidden: boolean
 }
 
+const commentColours = [
+    "#dfb976",
+    "#c172d9",
+    "#4fb1bc",
+    "#97c26c",
+    "#abb2c0",
+    "#5caeef"
+];
+
 class Comment extends Component<Props, State> {
 
     constructor(props: Props) {
@@ -77,10 +86,20 @@ class Comment extends Component<Props, State> {
                 }
             }
 
+            let commentSeparatorColor = 'none';
+            let leftPadding = '0';
+            if (this.props.nesting > 0) {
+                commentSeparatorColor = '2px solid ' + commentColours[this.props.nesting % commentColours.length];
+                leftPadding = '2%';
+            }
+
+            const nextCommentSeparatorColor = '2px solid ' + commentColours[(this.props.nesting + 1) % commentColours.length];
+
+
             if (!this.state.isHidden) {
                 return (
-                    <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
-                        <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
+                    <div style={{ paddingLeft: leftPadding }}>
+                        <div style={{ marginLeft: '4px', borderLeft: commentSeparatorColor }}>
                             <button className='comment-author' onClick={() => this.authorClicked()}>
                                 <div className='triangle-box'>
                                     <div className='triangle-up-comment' />
@@ -89,7 +108,7 @@ class Comment extends Component<Props, State> {
                                 <p className='time'>{getHumanReadableTimeElapsed(this.state.comment.time)}</p>
                             </button>
                             <div style={{ paddingLeft: '2%' }}>
-                                <div className='comment-box'
+                                <div className='comment-box' style={{ borderLeft: nextCommentSeparatorColor }}
                                     dangerouslySetInnerHTML={{
                                         __html: purified
                                     }} />
@@ -100,8 +119,8 @@ class Comment extends Component<Props, State> {
                 )
             } else {
                 return (
-                    <div style={{ paddingLeft: (this.props.nesting === 0 ? '0%' : '2%') }}>
-                        <div style={{ marginLeft: '4px', borderLeft: (this.props.nesting === 0 ? 'none' : '2px solid grey') }}>
+                    <div style={{ paddingLeft: leftPadding }}>
+                        <div style={{ marginLeft: '4px', borderLeft: commentSeparatorColor }}>
                             <button className='comment-author' onClick={() => this.authorClicked()}>
                                 <div className='triangle-box'>
                                     <div className='triangle-down-comment' />
