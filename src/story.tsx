@@ -60,6 +60,16 @@ class Story extends Component<Props, State> {
         return '';
     }
 
+    getFaviconUrl(url: string) {
+        if (url == undefined) {
+            return '';
+        }
+        url = this.minimizeUrl(url);
+        const base = url.split('/')[0];
+        return 'https://' + base + '/favicon.ico';
+    }
+
+
     render() {
 
         if (!this.state.storyJson) {
@@ -85,9 +95,19 @@ class Story extends Component<Props, State> {
                                 {getHumanReadableTimeElapsed(this.state.storyJson.time)}
                             </p>
                         </div>
-                        <a className='link' href={this.state.storyJson.url}>
-                            {this.minimizeUrl(this.state.storyJson.url)}
-                        </a>
+                        <div className="link-box">
+                            <img
+                                style={{ width: '15px', height: '15px', paddingRight: '3px' }}
+                                src={this.getFaviconUrl(this.state.storyJson.url)}
+                                onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null; // prevents looping
+                                    currentTarget.hidden = true;
+                                }}
+                            />
+                            <a className='link' href={this.state.storyJson.url}>
+                                {this.minimizeUrl(this.state.storyJson.url)}
+                            </a>
+                        </div>
                     </div>
                     <div className='points-box'>
                         <div className='flex'>
@@ -115,9 +135,19 @@ class Story extends Component<Props, State> {
                                 {getHumanReadableTimeElapsed(this.state.storyJson.time)}
                             </p>
                         </div>
-                        <a className='link' href={this.state.storyJson.url}>
-                            {this.minimizeUrl(this.state.storyJson.url)}
-                        </a>
+                        <div className="link-box">
+                            <img
+                                style={{ width: '15px', height: '15px', paddingRight: '3px' }}
+                                src={this.getFaviconUrl(this.state.storyJson.url)}
+                                onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null; // prevents looping
+                                    currentTarget.hidden = true;
+                                }}
+                            />
+                            <a className='link' href={this.state.storyJson.url}>
+                                {this.minimizeUrl(this.state.storyJson.url)}
+                            </a>
+                        </div>
                     </div>
                     <div className='comments-and-points-box'>
                         <div className='flex'>

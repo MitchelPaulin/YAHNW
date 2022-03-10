@@ -28,7 +28,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-top: 3%;
 }
 
 .author {
@@ -90,6 +89,13 @@
 .flex {
     display: flex;
     align-items: center;
+}
+
+.link-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 3%;
 }
 
 .comment-button:hover {
