@@ -44,10 +44,8 @@ class Comment extends Component<Props, State> {
     }
 
     fetchComments(root: string) {
-        let head = 'https://hacker-news.firebaseio.com/v0/item/';
-        let tail = '.json'
 
-        fetch(head + root + tail)
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${root}.json`)
             .then((resp) => {
                 return resp.json();
             })

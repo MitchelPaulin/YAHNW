@@ -34,10 +34,7 @@ class Story extends Component<Props, State> {
 
     componentDidMount() {
 
-        let link = 'https://hacker-news.firebaseio.com/v0/item/';
-        let tail = '.json';
-
-        fetch(link + this.props.id + tail)
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${this.props.id}.json`)
             .then((resp) => resp.json())
             .then((response) => {
                 this.setState({ storyJson: response });
@@ -61,12 +58,12 @@ class Story extends Component<Props, State> {
     }
 
     getFaviconUrl(url: string) {
-        if (url == undefined) {
+        if (url === undefined || url === null) {
             return '';
         }
         url = this.minimizeUrl(url);
         const base = url.split('/')[0];
-        return 'https://' + base + '/favicon.ico';
+        return `http://www.google.com/s2/favicons?domain=${base}/`;
     }
 
 
@@ -97,8 +94,8 @@ class Story extends Component<Props, State> {
                         </div>
                         <div className="link-box">
                             <img
-                                style={{ width: '15px', height: '15px', paddingRight: '3px' }}
                                 src={this.getFaviconUrl(this.state.storyJson.url)}
+                                alt="site favicon"
                                 onError={({ currentTarget }) => {
                                     currentTarget.onerror = null; // prevents looping
                                     currentTarget.hidden = true;
@@ -137,8 +134,8 @@ class Story extends Component<Props, State> {
                         </div>
                         <div className="link-box">
                             <img
-                                style={{ width: '15px', height: '15px', paddingRight: '3px' }}
                                 src={this.getFaviconUrl(this.state.storyJson.url)}
+                                alt="site favicon"
                                 onError={({ currentTarget }) => {
                                     currentTarget.onerror = null; // prevents looping
                                     currentTarget.hidden = true;
