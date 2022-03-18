@@ -87,11 +87,11 @@ class Comment extends Component<Props, State> {
             let commentSeparatorColor = 'none';
             let leftPadding = '0';
             if (this.props.nesting > 0) {
-                commentSeparatorColor = '2px solid ' + commentColours[this.props.nesting % commentColours.length];
-                leftPadding = '2%';
+                commentSeparatorColor = '2px inset ' + commentColours[this.props.nesting % commentColours.length];
+                leftPadding = '1%';
             }
 
-            const nextCommentSeparatorColor = '2px solid ' + commentColours[(this.props.nesting + 1) % commentColours.length];
+            const nextCommentSeparatorColor = '2px inset ' + commentColours[(this.props.nesting + 1) % commentColours.length];
 
 
             if (!this.state.isHidden) {
@@ -105,7 +105,7 @@ class Comment extends Component<Props, State> {
                                 {this.state.comment.by}
                                 <p className='time'>{getHumanReadableTimeElapsed(this.state.comment.time)}</p>
                             </button>
-                            <div style={{ paddingLeft: '2%' }}>
+                            <div style={{ paddingLeft: '1%' }}>
                                 <div className='comment-box' style={{ borderLeft: nextCommentSeparatorColor }}
                                     dangerouslySetInnerHTML={{
                                         __html: purified
