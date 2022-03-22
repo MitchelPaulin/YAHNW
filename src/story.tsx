@@ -63,7 +63,7 @@ class Story extends Component<Props, State> {
         }
         url = this.minimizeUrl(url);
         const base = url.split('/')[0];
-        return `http://www.google.com/s2/favicons?domain=${base}/`;
+        return `https://www.google.com/s2/favicons?domain=${base}/`;
     }
 
 
