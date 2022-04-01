@@ -13,7 +13,7 @@ type Comments = {
     id: number,
     text: string,
     time: number,
-    deleted: boolean,
+    dead: boolean | undefined,
     kids: number[]
 }
 
@@ -70,8 +70,8 @@ class Comment extends Component<Props, State> {
     }
 
     render() {
-
-        if (this.state.comment && !this.state.comment.deleted) {
+        console.log(this.state?.comment?.dead);
+        if (this.state.comment && !this.state.comment.dead && this.state.comment.text?.length) {
 
             //Comments are given in HTML, important that we sanitize the content before displaying it 
             let purified = DOMPurify.sanitize(this.state.comment.text);
@@ -115,23 +115,23 @@ class Comment extends Component<Props, State> {
                         </div>
                     </div>
                 )
-            } else {
-                return (
-                    <div style={{ paddingLeft: leftPadding }}>
-                        <div style={{ marginLeft: '4px', borderLeft: commentSeparatorColor }}>
-                            <button className='comment-author' onClick={() => this.authorClicked()}>
-                                <div className='triangle-box'>
-                                    <div className='triangle-down-comment' />
-                                </div>
-                                {this.state.comment.by}
-                                <p className='time'>
-                                    {getHumanReadableTimeElapsed(this.state.comment.time)}
-                                </p>
-                            </button>
-                        </div>
-                    </div>
-                )
             }
+
+            return (
+                <div style={{ paddingLeft: leftPadding }}>
+                    <div style={{ marginLeft: '4px', borderLeft: commentSeparatorColor }}>
+                        <button className='comment-author' onClick={() => this.authorClicked()}>
+                            <div className='triangle-box'>
+                                <div className='triangle-down-comment' />
+                            </div>
+                            {this.state.comment.by}
+                            <p className='time'>
+                                {getHumanReadableTimeElapsed(this.state.comment.time)}
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            )
         }
         return <div></div>
     }
