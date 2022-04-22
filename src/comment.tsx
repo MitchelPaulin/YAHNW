@@ -70,7 +70,6 @@ class Comment extends Component<Props, State> {
     }
 
     render() {
-        console.log(this.state?.comment?.dead);
         if (this.state.comment && !this.state.comment.dead && this.state.comment.text?.length) {
 
             //Comments are given in HTML, important that we sanitize the content before displaying it 
