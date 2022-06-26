@@ -1,35 +1,35 @@
 .ribbon {
   text-align: left;
   font-weight: bold;
-  padding-left: 1%;
-  height: 5vh;
+  padding-left: 15px;
+  height: 55px;
   display: flex;
   align-items: center;
 }
 
 .site-title {
-  font-size: 70%;
+  font-size: 1em;
   color: var(--highlight-color-purple);
   text-decoration: none;
 }
 
 .logo {
-  height: 80%;
+  height: 45px;
   padding-right: 10px;
 }
 
 .button-box {
   margin-left: auto;
-  width: 15%;
+  width: 250px;
   min-width: 100px;
 }
 
 .story-button {
   text-align: center;
   color: var(--highlight-color-purple);
-  font-size: 55%;
-  padding: 2% 2% 2% 2%;
-  width: 33%;
+  font-size: 0.5em;
+  padding: 5px;
+  width: 75px;
   border-radius: 10px;
 }
 

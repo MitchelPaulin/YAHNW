@@ -27,7 +27,7 @@ class Ribbon extends Component<Props, State> {
 
     render() {
 
-        const styling = {
+        const selectedStyling = {
             backgroundColor: '#272727'
         }
 
@@ -37,17 +37,17 @@ class Ribbon extends Component<Props, State> {
                 <p>YAHNW</p>
                 <div className='button-box'>
                     <button className='story-button'
-                        style={this.state.selectedButton === 'Top' ? styling : {}}
+                        style={this.state.selectedButton === 'Top' ? selectedStyling : {}}
                         onClick={() => this.storyButtonClicked('Top')}>
                         <b>Top</b>
                     </button>
                     <button className='story-button'
-                        style={this.state.selectedButton === 'Best' ? styling : {}}
+                        style={this.state.selectedButton === 'Best' ? selectedStyling : {}}
                         onClick={() => this.storyButtonClicked('Best')}>
                         <b>Best</b>
                     </button>
                     <button className='story-button'
-                        style={this.state.selectedButton === 'New' ? styling : {}}
+                        style={this.state.selectedButton === 'New' ? selectedStyling : {}}
                         onClick={() => this.storyButtonClicked('New')}>
                         <b>New</b>
                     </button>

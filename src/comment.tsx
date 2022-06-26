@@ -102,7 +102,7 @@ class Comment extends Component<Props, State> {
                                     <div className='triangle-up-comment' />
                                 </div>
                                 {this.state.comment.by}
-                                <p className='time'>{getHumanReadableTimeElapsed(this.state.comment.time)}</p>
+                                <div className='time'>{getHumanReadableTimeElapsed(this.state.comment.time)}</div>
                             </button>
                             <div style={{ paddingLeft: '1%' }}>
                                 <div className='comment-box' style={{ borderLeft: nextCommentSeparatorColor }}
@@ -116,6 +116,11 @@ class Comment extends Component<Props, State> {
                 )
             }
 
+            let commentCount = null;
+            if (childComments.length > 0) {
+                commentCount = <span className='pill'>+ {childComments.length}</span>
+            }
+
             return (
                 <div style={{ paddingLeft: leftPadding }}>
                     <div style={{ marginLeft: '4px', borderLeft: commentSeparatorColor }}>
@@ -124,9 +129,10 @@ class Comment extends Component<Props, State> {
                                 <div className='triangle-down-comment' />
                             </div>
                             {this.state.comment.by}
-                            <p className='time'>
+                            <div className='time'>
                                 {getHumanReadableTimeElapsed(this.state.comment.time)}
-                            </p>
+                            </div>
+                            {commentCount}
                         </button>
                     </div>
                 </div>
