@@ -106,7 +106,7 @@ class Story extends Component<Props, State> {
                             </a>
                         </div>
                     </div>
-                    <div className='points-box'>
+                    <div className='comments-and-points-box'>
                         <div className='flex'>
                             <p className='score'>
                                 {this.state.storyJson.score}

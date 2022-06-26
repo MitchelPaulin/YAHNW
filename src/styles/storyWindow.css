@@ -3,10 +3,6 @@
     color: grey;
 }
 
-.wrap {
-    display: flex;
-}
-
 .box-left {
     height: 95vh;
     width: 35vw;
@@ -22,6 +18,7 @@
 }
 
 .box-full {
+    height: 95vh;
     overflow-y: none;
     text-align: left;
 }
