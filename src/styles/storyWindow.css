@@ -19,6 +19,6 @@
 
 .box-full {
     height: 95vh;
-    overflow-y: none;
+    overflow-y: hidden;
     text-align: left;
 }

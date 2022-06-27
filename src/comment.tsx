@@ -118,7 +118,7 @@ class Comment extends Component<Props, State> {
 
             let commentCount = null;
             if (childComments.length > 0) {
-                commentCount = <span className='pill'>+ {childComments.length}</span>
+                commentCount = <i className='pill'>+ {childComments.length}</i>
             }
 
             return (
