@@ -9,6 +9,7 @@
     overflow-y: scroll;
     text-align: left;
     float: left;
+    overflow-x: hidden;
 }
 
 .box-right {

@@ -6,9 +6,9 @@
 
 .comment-text-box {
     text-align: left;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
     font-size: 0.45em;
+    padding-left: 10px;
 }
 
 .click-comment-message {
