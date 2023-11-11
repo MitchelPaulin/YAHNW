@@ -112,7 +112,7 @@ class Story extends Component<Props, State> {
                         <div className='triangle-up' />
                     </div>
                     <div className='flex-child'>
-                        <button className='flex comment-button' onClick={() => this.commentIconClicked()}>
+                        <button className='comment-button' onClick={() => this.commentIconClicked()}>
                             <p className='comment-count'>
                                 {this.state.storyJson.kids ? this.state.storyJson.kids.length : 0}
                             </p>
