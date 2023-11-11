@@ -21,3 +21,13 @@
     height: 95vh;
     flex-grow: 1;
 }
+
+@media screen and (max-width: 1000px) {
+    .box-right {
+        visibility: hidden;
+    }
+
+    .box-left {
+        flex: 0 0 100%;
+    }
+  }

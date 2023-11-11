@@ -6,7 +6,6 @@ import bubble from './imgs/bubble.png';
 type Props = {
     selected: boolean,
     id: string,
-    isMobile: boolean,
     commentCallback: (a: number[], b: number, c: string) => void
 }
 

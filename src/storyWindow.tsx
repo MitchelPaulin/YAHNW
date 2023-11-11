@@ -9,7 +9,6 @@ type Props = {
 }
 
 type State = {
-    isMobile: boolean,
     selectedStory: number | null,
     selectedStoryText: string | null,
     storyIds: number[],
@@ -26,8 +25,7 @@ class StoryWindow extends Component<Props, State> {
             storyIds: [],
             storyCommentIds: [],
             selectedStory: null,
-            selectedStoryText: null,
-            isMobile: this.isMobileView()
+            selectedStoryText: null
         }
     }
 
@@ -44,18 +42,7 @@ class StoryWindow extends Component<Props, State> {
 
     componentDidMount() {
         this.fetchStories();
-        window.addEventListener('resize', this.handleWindowSizeChange);
     }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleWindowSizeChange);
-    }
-
-    handleWindowSizeChange = () => {
-        if (this.state.isMobile !== this.isMobileView()) {
-            this.setState({ isMobile: !this.state.isMobile })
-        }
-    };
 
     scrollToTopOfPage() {
         this.ref.current.scrollTo(0, 0);
@@ -76,10 +63,6 @@ class StoryWindow extends Component<Props, State> {
             });
     }
 
-    isMobileView() {
-        return window.innerWidth <= 1000;
-    }
-
     render() {
 
         if (this.state.storyIds) {
@@ -89,29 +72,19 @@ class StoryWindow extends Component<Props, State> {
                     key={storyId}
                     id={storyId.toString()}
                     commentCallback={this.commentClickCallback}
-                    isMobile={this.state.isMobile}
-                    selected={this.state.selectedStory === storyId && !this.state.isMobile}>
+                    selected={this.state.selectedStory === storyId}>
                 </Story>)
             }
-            if (this.isMobileView()) {
-                return (
-                    <div ref={this.ref}>
+            return (
+                <div className="flex">
+                    <div className="box-left" ref={this.ref}>
                         {stories}
                     </div>
-                );
-            } else {
-                return (
-                    <div className="flex">
-                        <div className="box-left" ref={this.ref}>
-                            {stories}
-                        </div>
-                        <div className='box-right'>
-                            <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText || ''}></CommentWindow>
-                        </div>
+                    <div className='box-right'>
+                        <CommentWindow kids={this.state.storyCommentIds} displayText={this.state.selectedStoryText || ''}></CommentWindow>
                     </div>
-                );
-            }
-
+                </div>
+            );
         }
 
         return (
