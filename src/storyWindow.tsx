@@ -76,8 +76,8 @@ class StoryWindow extends Component<Props, State> {
                 </Story>)
             }
             return (
-                <div className="flex">
-                    <div className="box-left" ref={this.ref}>
+                <div className='flex'>
+                    <div className='box-left' ref={this.ref}>
                         {stories}
                     </div>
                     <div className='box-right'>

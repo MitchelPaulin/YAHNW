@@ -24,12 +24,12 @@ type State = {
 }
 
 const commentColours = [
-    "#dfb976",
-    "#c172d9",
-    "#4fb1bc",
-    "#97c26c",
-    "#abb2c0",
-    "#5caeef"
+    '#dfb976',
+    '#c172d9',
+    '#4fb1bc',
+    '#97c26c',
+    '#abb2c0',
+    '#5caeef'
 ];
 
 class Comment extends Component<Props, State> {

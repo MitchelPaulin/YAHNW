@@ -90,10 +90,10 @@ class Story extends Component<Props, State> {
                             {getHumanReadableTimeElapsed(this.state.storyJson.time)}
                         </p>
                     </div>
-                    <div className="link-box">
+                    <div className='link-box'>
                         <img
                             src={this.getFaviconUrl(this.state.storyJson.url)}
-                            alt="site favicon"
+                            alt='site favicon'
                             onError={({ currentTarget }) => {
                                 currentTarget.onerror = null; // prevents looping
                                 currentTarget.hidden = true;
