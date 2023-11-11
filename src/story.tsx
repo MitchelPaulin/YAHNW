@@ -77,93 +77,52 @@ class Story extends Component<Props, State> {
             backgroundColor: this.props.selected ? '#272727' : '',
         }
 
-        if (this.props.isMobile) {
-            return (
-                <div className='story-container' style={styling}>
-                    <div className='story-card'>
-                        <a className='title' href={this.state.storyJson.url}>
-                            {this.state.storyJson.title}
+        return (
+            <div className='story-container' style={styling}>
+                <div className='main-window'>
+                    <a className='title' href={this.state.storyJson.url}>
+                        {this.state.storyJson.title}
+                    </a>
+                    <div className='flex'>
+                        <p className='author'>
+                            {this.state.storyJson.by}
+                        </p>
+                        <p className='time-story'>
+                            {getHumanReadableTimeElapsed(this.state.storyJson.time)}
+                        </p>
+                    </div>
+                    <div className="link-box">
+                        <img
+                            src={this.getFaviconUrl(this.state.storyJson.url)}
+                            alt="site favicon"
+                            onError={({ currentTarget }) => {
+                                currentTarget.onerror = null; // prevents looping
+                                currentTarget.hidden = true;
+                            }}
+                        />
+                        <a className='link' href={this.state.storyJson.url}>
+                            {this.minimizeUrl(this.state.storyJson.url)}
                         </a>
-                        <div className='flex'>
-                            <p className='author'>
-                                {this.state.storyJson.by}
-                            </p>
-                            <p className='time-story'>
-                                {getHumanReadableTimeElapsed(this.state.storyJson.time)}
-                            </p>
-                        </div>
-                        <div className="link-box">
-                            <img
-                                src={this.getFaviconUrl(this.state.storyJson.url)}
-                                alt="site favicon"
-                                onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null; // prevents looping
-                                    currentTarget.hidden = true;
-                                }}
-                            />
-                            <a className='link' href={this.state.storyJson.url}>
-                                {this.minimizeUrl(this.state.storyJson.url)}
-                            </a>
-                        </div>
                     </div>
-                    <div className='comments-and-points-box'>
-                        <div className='flex'>
-                            <p className='score'>
-                                {this.state.storyJson.score}
-                            </p>
-                            <div className='triangle-up' />
-                        </div>
-                    </div>
-                    <div style={{ clear: 'both' }} />
                 </div>
-            )
-        } else {
-            return (
-                <div className='story-container' style={styling}>
-                    <div style={{ float: 'left', width: '85%' }}>
-                        <a className='title' href={this.state.storyJson.url}>
-                            {this.state.storyJson.title}
-                        </a>
-                        <div className='flex'>
-                            <p className='author'>
-                                {this.state.storyJson.by}
-                            </p>
-                            <p className='time-story'>
-                                {getHumanReadableTimeElapsed(this.state.storyJson.time)}
-                            </p>
-                        </div>
-                        <div className="link-box">
-                            <img
-                                src={this.getFaviconUrl(this.state.storyJson.url)}
-                                alt="site favicon"
-                                onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null; // prevents looping
-                                    currentTarget.hidden = true;
-                                }}
-                            />
-                            <a className='link' href={this.state.storyJson.url}>
-                                {this.minimizeUrl(this.state.storyJson.url)}
-                            </a>
-                        </div>
+                <div className='comments-and-points-box'>
+                    <div className='flex-child'>
+                        <p className='score'>
+                            {this.state.storyJson.score}
+                        </p>
+                        <div className='triangle-up' />
                     </div>
-                    <div className='comments-and-points-box'>
-                        <div className='flex'>
-                            <p className='score'>
-                                {this.state.storyJson.score}
-                            </p>
-                            <div className='triangle-up' />
-                        </div>
+                    <div className='flex-child'>
                         <button className='flex comment-button' onClick={() => this.commentIconClicked()}>
                             <p className='comment-count'>
                                 {this.state.storyJson.kids ? this.state.storyJson.kids.length : 0}
                             </p>
-                            <img src={bubble} alt='speech bubble' className='speech-bubble' />
                         </button>
+                        <img src={bubble} alt='speech bubble' className='speech-bubble' />
                     </div>
-                    <div style={{ clear: 'both' }} />
                 </div>
-            )
-        }
+            </div>
+        )
 
 
     }

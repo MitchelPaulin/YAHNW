@@ -5,14 +5,11 @@
     color: #ffffff;
     padding-top: 2.5%;
     padding-bottom: 1%;
-    display: block;
-}
-
-.story-card {
-    float: left;
 }
 
 .story-container {
+    display: flex;
+    flex-direction: row;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 2px;
@@ -20,8 +17,11 @@
     border-bottom: 1px solid grey;
 }
 
+.main-window {
+    flex-grow: 1;
+}
+
 .link {
-    display: block;
     font-size: 0.4em;
     color: #ffffff;
     text-decoration: none;
@@ -45,18 +45,16 @@
 
 .score {
     font-size: 0.42em;
-    padding-right: 10px;
+    margin: 0;
 }
 
 .comment-count {
     font-size: 0.42em;
-    padding-right: 10px;
+    margin: 0;
     color: #ffffff;
 }
 
 .comment-count:hover {
-    font-size: 0.42em;
-    padding-right: 10px;
     color: var(--highlight-color-green);
 }
 
@@ -70,18 +68,22 @@
 }
 
 .comments-and-points-box {
-    float: right;
-    width: 50px;
     padding-top: 10px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50px;
 }
 
 .speech-bubble {
     width: 15px;
 }
 
-.flex {
+.flex-child {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
 }
 
 .link-box {
