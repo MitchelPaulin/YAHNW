@@ -43,8 +43,8 @@ class CommentWindow extends Component<Props> {
         }
 
         return (
-            <div>
-                <p className='click-comment-message'>Click on a</p>
+            <div className='click-comment-message'>
+                <p>Click on a</p>
                 <img src={bubble} alt='speech bubble' style={{ width: '50px' }} />
             </div>
         )

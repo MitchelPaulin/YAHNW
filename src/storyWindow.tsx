@@ -95,16 +95,14 @@ class StoryWindow extends Component<Props, State> {
             }
             if (this.isMobileView()) {
                 return (
-                    <div>
-                        <div className='story-window box-full' ref={this.ref}>
-                            {stories}
-                        </div>
+                    <div ref={this.ref}>
+                        {stories}
                     </div>
                 );
             } else {
                 return (
-                    <div>
-                        <div className='story-window box-left' ref={this.ref}>
+                    <div className="flex">
+                        <div className="box-left" ref={this.ref}>
                             {stories}
                         </div>
                         <div className='box-right'>

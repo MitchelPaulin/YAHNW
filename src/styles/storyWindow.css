@@ -3,23 +3,21 @@
     color: grey;
 }
 
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
 .box-left {
-    height: 95vh;
-    width: 35vw;
+    flex: 0 0 35%;
     overflow-y: scroll;
     text-align: left;
-    float: left;
-    overflow-x: hidden;
+    height: 95vh;
 }
 
 .box-right {
-    height: 95vh;
-    width: 65vw;
     overflow-y: scroll;
-}
-
-.box-full {
     height: 95vh;
-    overflow-y: hidden;
-    text-align: left;
+    flex-grow: 1;
 }
