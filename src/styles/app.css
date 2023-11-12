@@ -2,7 +2,7 @@
   --background-color-dark: #121212;
   --highlight-color-green: #03DAC5;
   --highlight-color-purple: #BB86Fc;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .App {
