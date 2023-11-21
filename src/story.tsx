@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import './styles/story.css';
 import { getHumanReadableTimeElapsed } from './common';
-import bubble from './imgs/bubble.png';
 
 type Props = {
     selected: boolean,
@@ -80,7 +79,7 @@ class Story extends Component<Props, State> {
             <div className='story-container' style={styling}>
                 <div className='main-window'>
                     <a className='title' href={this.state.storyJson.url}>
-                        {this.state.storyJson.title}
+                        <p>{this.state.storyJson.title}</p>
                     </a>
                     <div className='flex'>
                         <p className='author'>
@@ -113,11 +112,13 @@ class Story extends Component<Props, State> {
                     </div>
                     <div className='flex-child'>
                         <button className='comment-button' onClick={() => this.commentIconClicked()}>
-                            <p className='comment-count'>
-                                {this.state.storyJson.kids ? this.state.storyJson.kids.length : 0}
-                            </p>
+                            <div className='button-body'>
+                                <p className='comment-count'>
+                                    {this.state.storyJson.kids ? this.state.storyJson.kids.length : 0}
+                                </p>
+                                <img alt='speech bubble' className='speech-bubble' />
+                            </div>
                         </button>
-                        <img src={bubble} alt='speech bubble' className='speech-bubble' />
                     </div>
                 </div>
             </div>

@@ -3,8 +3,10 @@
     font-size: 0.5em;
     font-weight: bold;
     color: #ffffff;
-    padding-top: 2.5%;
-    padding-bottom: 1%;
+}
+
+.title > p {
+    padding-right: 5px;
 }
 
 .story-container {
@@ -25,8 +27,6 @@
     font-size: 0.4em;
     color: #ffffff;
     text-decoration: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
     padding-left: 4px;
 }
 
@@ -47,16 +47,6 @@
     margin: 0;
 }
 
-.comment-count {
-    font-size: 0.42em;
-    margin: 0;
-    color: #ffffff;
-}
-
-.comment-count:hover {
-    color: var(--highlight-color-green);
-}
-
 .triangle-up {
     width: 0;
     height: 0;
@@ -64,6 +54,16 @@
     border-right: 0.4em solid transparent;
     border-bottom: 0.8em solid #ffffff;
     font-size: 0.42em;
+}
+
+.comment-count {
+    font-size: 0.42em;
+    margin: 0;
+    color: #ffffff;
+}
+
+button:hover > div > .comment-count {
+    color: var(--highlight-color-green);
 }
 
 .comments-and-points-box {
@@ -76,6 +76,11 @@
 
 .speech-bubble {
     height: 15px;
+    content: url('../imgs/bubble.png');
+}
+
+button:hover > div > .speech-bubble {
+    content: url('../imgs/bubble-green.png');
 }
 
 .flex-child {
@@ -93,12 +98,26 @@
     padding-top: 3%;
 }
 
-.comment-button:hover {
-    font-weight: number;
-}
-
 .comment-button {
     font-family: inherit;
     padding: 0;
     font-size: 1em;
+    min-width: 50px;
+    border-radius: 10px;
+}
+
+.comment-button:hover {
+    font-weight: number;
+}
+
+
+.button-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+    .comment-button {
+        visibility: hidden;
+    }
 }
