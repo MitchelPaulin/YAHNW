@@ -28,6 +28,7 @@
     color: #ffffff;
     text-decoration: none;
     padding-left: 4px;
+    overflow-wrap: anywhere;
 }
 
 .author {
