@@ -28,7 +28,7 @@ class Ribbon extends Component<Props, State> {
     render() {
 
         const selectedStyling = {
-            backgroundColor: '#272727'
+            backgroundColor: 'var(--background-color-highlight)'
         }
 
         return (

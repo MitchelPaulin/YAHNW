@@ -7,8 +7,12 @@
 .comment-text-box {
     text-align: left;
     overflow: hidden;
-    font-size: 0.45em;
-    padding-left: 10px;
+    font-size: 1rem;
+    margin-left: 25px;
+    border: 1px solid var(--background-color-highlight);
+    padding: 5px;
+    background-color: var(--background-color-highlight);
+    border-radius: 5px;
 }
 
 .click-comment-message {
@@ -29,7 +33,7 @@
 }
 
 .comment-author:hover {
-    background-color: #272727;
+    background-color: var(--background-color-highlight);
 }
 
 .triangle-up-comment {

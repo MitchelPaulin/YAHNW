@@ -18,7 +18,7 @@ class CommentWindow extends Component<Props> {
             for (let kid of this.props.kids) {
                 comments.push(<Comment key={kid} rootKid={kid} nesting={0}></Comment>)
             }
-            if (this.props.displayText === undefined) {
+            if (!this.props.displayText) {
                 return (
                     <div className='comment-window'>
                         {comments}

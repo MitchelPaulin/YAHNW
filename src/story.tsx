@@ -72,7 +72,7 @@ class Story extends Component<Props, State> {
         }
 
         const styling = {
-            backgroundColor: this.props.selected ? '#272727' : '',
+            backgroundColor: this.props.selected ? 'var(--background-color-highlight)' : '',
         }
 
         return (
