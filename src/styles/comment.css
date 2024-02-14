@@ -8,11 +8,11 @@
     text-align: left;
     overflow: hidden;
     font-size: 1rem;
-    margin-left: 25px;
     border: 1px solid var(--background-color-highlight);
-    padding: 5px;
     background-color: var(--background-color-highlight);
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 5px 5px 20px 25px;
 }
 
 .click-comment-message {
