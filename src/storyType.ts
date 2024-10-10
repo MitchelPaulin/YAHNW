@@ -1,1 +1,3 @@
-export type StoryType = 'Top' | 'Best' | 'New';
+export enum StoryType {
+    Top, Best, New
+}

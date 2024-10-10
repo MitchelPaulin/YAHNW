@@ -50,9 +50,9 @@ class StoryWindow extends Component<Props, State> {
 
     fetchStories() {
         let url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
-        if (this.props.storyMode === 'Best') {
+        if (this.props.storyMode === StoryType.Best) {
             url = 'https://hacker-news.firebaseio.com/v0/beststories.json';
-        } else if (this.props.storyMode === 'New') {
+        } else if (this.props.storyMode === StoryType.New) {
             url = 'https://hacker-news.firebaseio.com/v0/newstories.json';
         }
 

@@ -13,12 +13,19 @@ class App extends Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
+    const params = new URLSearchParams(window.location.search);
+    const param = params.get('storyType') ?? 'Top';
+    const selectedStoryType: StoryType = StoryType[param as keyof typeof StoryType];
     this.state = {
-      storyMode: 'Top'
+      storyMode: selectedStoryType
     }
   }
 
   storyModeChanged = (s: StoryType) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('storyType', StoryType[s]);
+    window.history.pushState(null, '', url.toString());
+
     this.setState({ storyMode: s });
   }
 

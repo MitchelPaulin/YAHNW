@@ -15,8 +15,11 @@ class Ribbon extends Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
+        const params = new URLSearchParams(window.location.search);
+        const param = params.get('storyType') ?? 'Top';
+        const selectedStoryType: StoryType = StoryType[param as keyof typeof StoryType];
         this.state = {
-            selectedButton: 'Top'
+            selectedButton: selectedStoryType
         };
     }
 
@@ -37,18 +40,18 @@ class Ribbon extends Component<Props, State> {
                 <p>YAHNW</p>
                 <div className='button-box'>
                     <button className='story-button'
-                        style={this.state.selectedButton === 'Top' ? selectedStyling : {}}
-                        onClick={() => this.storyButtonClicked('Top')}>
+                        style={this.state.selectedButton === StoryType.Top ? selectedStyling : {}}
+                        onClick={() => this.storyButtonClicked(StoryType.Top)}>
                         <b>Top</b>
                     </button>
                     <button className='story-button'
-                        style={this.state.selectedButton === 'Best' ? selectedStyling : {}}
-                        onClick={() => this.storyButtonClicked('Best')}>
+                        style={this.state.selectedButton === StoryType.Best ? selectedStyling : {}}
+                        onClick={() => this.storyButtonClicked(StoryType.Best)}>
                         <b>Best</b>
                     </button>
                     <button className='story-button'
-                        style={this.state.selectedButton === 'New' ? selectedStyling : {}}
-                        onClick={() => this.storyButtonClicked('New')}>
+                        style={this.state.selectedButton === StoryType.New ? selectedStyling : {}}
+                        onClick={() => this.storyButtonClicked(StoryType.New)}>
                         <b>New</b>
                     </button>
                 </div>
